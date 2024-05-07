@@ -74,8 +74,21 @@
       user-select: none;
     }
   </style>
-  <div id="app"></div>
-  <script type="module" src="/main.js"></script>
+  <div id="app">
+    <div id="ui">
+      <p class="note">Toca/Clickea la pantalla para moverte</p>
+      <div id="textbox-container" style="display: none;">
+        <div id="textbox">
+          <p id="dialogue" class="ui-text"></p>
+          <div class="btn-container">
+            <button id="close" class="ui-close-btn">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <canvas id="game"></canvas>
+  </div>
+  <script type="module" src="./src/main.js"></script>
 </body>
 
 </html>
