@@ -349,6 +349,26 @@ img {
   transform: scale(1.1);
 }
 
+.work-category {
+  margin-bottom: var(--mb-6);
+}
+
+.work-category__title {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+
+.work-category__description {
+  text-align: center;
+  color: var(--second-color);
+  font-size: var(--normal-font-size);
+  margin: 0 auto var(--mb-4);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
 .contact__input {
   width: 100%;
   font-size: var(--normal-font-size);
