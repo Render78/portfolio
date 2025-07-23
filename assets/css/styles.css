@@ -4,9 +4,9 @@
   --header-height: 3rem;
   --font-semi: 600;
 
-  --hue-color: 224;
-  --first-color: hsl(var(--hue-color), 89%, 60%);
-  --second-color: hsl(var(--hue-color), 56%, 12%);
+  --first-color: #3c6ff8;
+  --second-color: #e5eaf5;
+  --bg-color: #101828;
 
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -47,6 +47,7 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   color: var(--second-color);
+  background-color: var(--bg-color);
 }
 
 h1,
