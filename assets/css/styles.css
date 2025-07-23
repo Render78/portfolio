@@ -111,7 +111,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #fff;
+  background-color: #181f2a;
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -370,7 +370,7 @@ img {
 }
 
 .footer {
-  background-color: var(--second-color);
+  background-color: #181f2a;
   color: #fff;
   text-align: center;
   font-weight: var(--font-semi);
