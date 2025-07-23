@@ -1,0 +1,82 @@
+[
+    {
+        "image": "tetris.png",
+        "title": "Tetris",
+        "description": "Versión web del clásico Tetris, con controles de teclado y lógica de colisión de piezas.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "pong.png",
+        "title": "Pong para dos jugadores",
+        "description": "Juego Pong local para dos jugadores, cada uno con sus propias teclas de control.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "snake-game.png",
+        "title": "Snake Game",
+        "description": "Juego de la serpiente donde el jugador debe recolectar comida sin chocar consigo mismo.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "memo-test.png",
+        "title": "Memo Test",
+        "description": "Juego de memoria con cartas que se voltean y se deben emparejar en el menor tiempo posible.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "tateti.png",
+        "title": "Tateti / Tres en línea",
+        "description": "Juego clásico de tres en línea para dos jugadores, con sistema de puntuación.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "ahorcado.png",
+        "title": "Ahorcado",
+        "description": "Versión web del juego del ahorcado, donde se debe adivinar la palabra antes de que se complete el dibujo.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "piedra-papel-tijeras.png",
+        "title": "Piedra, Papel o Tijeras",
+        "description": "Mini juego contra la máquina para elegir entre piedra, papel o tijeras y ver quién gana.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    },
+    {
+        "image": "calculadora.png",
+        "title": "Calculadora",
+        "description": "Calculadora funcional con operaciones básicas y una interfaz clara y responsive.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ]
+    }
+]
