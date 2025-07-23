@@ -256,6 +256,16 @@ img {
   margin-bottom: var(--mb-2);
 }
 
+.text-hover {
+  transition: 0.3s;
+}
+
+.text-hover:hover {
+  color: var(--first-color);
+  cursor: default;
+}
+
+
 .about__img {
   justify-self: center;
 }
