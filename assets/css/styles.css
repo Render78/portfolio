@@ -428,13 +428,6 @@ img {
 
 /* MIS ESTILOS */
 
-.work__container__new {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
 .card {
   background-color: #181f2a;
   border-radius: 12px;
