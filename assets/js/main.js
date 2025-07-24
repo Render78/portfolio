@@ -54,4 +54,36 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 400 });
 sr.reveal('.home__social-icon', { interval: 200 });
-sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 }); 
+sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+
+fetch('./assets/data/data.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error al cargar el archivo JSON');
+        }
+        return response.json();
+    })
+    .then(projects => {
+        const container = document.getElementById('gamesContainer');
+
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            card.innerHTML = `
+                    <img src="${project.image}" alt="${project.title}">
+                    <div class="card-content">
+                        <h4 class="card-title">${project.title}</h4>
+                        <p class="card-description">${project.description}</p>
+                        <div class="card-tech">
+                            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+                        </div>
+                    </div>
+                `;
+
+            container.appendChild(card);
+        });
+    })
+    .catch(error => {
+        console.error('Hubo un problema al cargar los proyectos:', error);
+    });
