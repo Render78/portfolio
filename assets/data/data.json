@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "tetris.png",
+        "image": "./assets/img/games/tetris.png",
         "title": "Tetris",
         "description": "Versión web del clásico Tetris, con controles de teclado y lógica de colisión de piezas.",
         "technologies": [
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "image": "pong.png",
+        "image": "./assets/img/games/pong.png",
         "title": "Pong para dos jugadores",
         "description": "Juego Pong local para dos jugadores o para jugar contra IA, cada uno con sus propias teclas de control.",
         "technologies": [
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "image": "snake-game.png",
+        "image": "./assets/img/games/snake-game.png",
         "title": "Snake Game",
         "description": "Juego de la serpiente donde el jugador debe recolectar comida sin chocar consigo mismo.",
         "technologies": [
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "image": "memo-test.png",
+        "image": "./assets/img/games/memo-test.png",
         "title": "Memo Test",
         "description": "Juego de memoria con cartas que se voltean y se deben emparejar en el menor tiempo posible.",
         "technologies": [
@@ -45,7 +45,7 @@
     },
     {
         "id": 5,
-        "image": "tateti.png",
+        "image": "./assets/img/games/tateti.png",
         "title": "Tateti / Tres en línea",
         "description": "Juego clásico de tres en línea para dos jugadores, con sistema de puntuación.",
         "technologies": [
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "image": "ahorcado.png",
+        "image": "./assets/img/games/ahorcado.png",
         "title": "Ahorcado",
         "description": "Versión web del juego del ahorcado, donde se debe adivinar la palabra antes de que se complete el dibujo.",
         "technologies": [
