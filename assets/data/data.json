@@ -9,7 +9,8 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/tetris"
+        "github": "https://github.com/Render78/tetris",
+        "type": "game"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/pong"
+        "github": "https://github.com/Render78/pong",
+        "type": "game"
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/snake-game"
+        "github": "https://github.com/Render78/snake-game",
+        "type": "game"
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/memo-test"
+        "github": "https://github.com/Render78/memo-test",
+        "type": "game"
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/tateti"
+        "github": "https://github.com/Render78/tateti",
+        "type": "game"
     },
     {
         "id": 6,
@@ -69,6 +74,22 @@
             "CSS",
             "JavaScript"
         ],
-        "github": "https://github.com/Render78/ahorcado"
+        "github": "https://github.com/Render78/ahorcado",
+        "type": "game"
+    },
+    {
+        "id": 7,
+        "image": "./assets/img/web-apps/staybooker.png",
+        "title": "StayBooker",
+        "description": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles.",
+        "technologies": [
+            "Angular",
+            "Bootstrap 5",
+            "Spring Boot",
+            "JWT",
+            "MercadoPago API"
+        ],
+        "github": "https://github.com/Render78/ahorcado",
+        "type": "web-app"
     }
 ]
