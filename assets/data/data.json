@@ -13,7 +13,7 @@
     {
         "id": 2,
         "image": "./assets/img/games/pong.png",
-        "title": "Pong para dos jugadores",
+        "title": "Pong",
         "description": "Juego Pong local para dos jugadores o para jugar contra IA, cada uno con sus propias teclas de control.",
         "technologies": [
             "HTML",
