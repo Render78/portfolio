@@ -8,7 +8,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/tetris"
     },
     {
         "id": 2,
@@ -19,7 +20,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/pong"
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/snake-game"
     },
     {
         "id": 4,
@@ -41,7 +44,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/memo-test"
     },
     {
         "id": 5,
@@ -52,7 +56,8 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/tateti"
     },
     {
         "id": 6,
@@ -63,6 +68,7 @@
             "HTML",
             "CSS",
             "JavaScript"
-        ]
+        ],
+        "github": "https://github.com/Render78/ahorcado"
     }
 ]

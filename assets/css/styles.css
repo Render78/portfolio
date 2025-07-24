@@ -443,6 +443,25 @@ img {
   transition: transform 0.3s ease;
 }
 
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.github-button {
+  color: var(--first-color);
+  font-size: 2rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.github-button:hover {
+  color: #ffffff;
+}
+
+
 .card:hover {
   transform: translateY(-5px);
 }
@@ -461,7 +480,7 @@ img {
   color: var(--first-color);
   font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 
 .card-description {

@@ -71,15 +71,20 @@ fetch('./assets/data/data.json')
             card.classList.add('card');
 
             card.innerHTML = `
-                    <img src="${project.image}" alt="${project.title}">
-                    <div class="card-content">
-                        <h4 class="card-title">${project.title}</h4>
-                        <p class="card-description">${project.description}</p>
-                        <div class="card-tech">
-                            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
-                        </div>
-                    </div>
-                `;
+    <img src="${project.image}" alt="${project.title}">
+    <div class="card-content">
+        <div class="card-header">
+            <h4 class="card-title">${project.title}</h4>
+            <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
+                <i class="bx bxl-github"></i>
+            </a>
+        </div>
+        <p class="card-description">${project.description}</p>
+        <div class="card-tech">
+            ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+        </div>
+    </div>
+`;
 
             container.appendChild(card);
         });
