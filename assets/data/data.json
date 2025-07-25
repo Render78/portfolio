@@ -106,7 +106,7 @@
     },
     {
         "id": 9,
-        "image": "./assets/img/web-apps/staybooker.png",
+        "image": "./assets/img/erp/staybooker.png",
         "title": "StayBooker",
         "description": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles.",
         "technologies": [
