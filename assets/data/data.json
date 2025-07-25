@@ -93,7 +93,7 @@
     },
     {
         "id": 8,
-        "image": "./assets/img/games/calculadora.png",
+        "image": "./assets/img/web-apps/calculadora.png",
         "title": "Calculadora",
         "description": "Calculadora que permite realizar las cuatro operaciones matemáticas básicas.",
         "technologies": [
