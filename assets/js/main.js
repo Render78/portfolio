@@ -64,33 +64,45 @@ fetch('./assets/data/data.json')
         return response.json();
     })
     .then(projects => {
-        const container = document.getElementById('gamesContainer');
+        const gameContainer = document.getElementById('gamesContainer');
+        const webAppContainer = document.getElementById('webAppContainer');
+        const erpContainer = document.getElementById('erpContainer');
 
-        const gameProjects = projects.filter(project => project.type === 'game');
+        const renderProjects = (projectList, container) => {
+            projectList.forEach(project => {
+                const card = document.createElement('div');
+                card.classList.add('card');
 
-        gameProjects.forEach(project => {
-            const card = document.createElement('div');
-            card.classList.add('card');
+                card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}">
+          <div class="card-content">
+            <div class="card-header">
+              <h4 class="card-title">${project.title}</h4>
+              ${project.github ? `
+                <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
+                  <i class="bx bxl-github"></i>
+                </a>` : ''}
+            </div>
+            <p class="card-description">${project.description}</p>
+            <div class="card-tech">
+              ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+            </div>
+          </div>
+        `;
 
-            card.innerHTML = `
-                <img src="${project.image}" alt="${project.title}">
-                <div class="card-content">
-                    <div class="card-header">
-                        <h4 class="card-title">${project.title}</h4>
-                        <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
-                            <i class="bx bxl-github"></i>
-                        </a>
-                    </div>
-                    <p class="card-description">${project.description}</p>
-                    <div class="card-tech">
-                        ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
-                    </div>
-                </div>
-            `;
+                container.appendChild(card);
+            });
+        };
 
-            container.appendChild(card);
-        });
+        const gameProjects = projects.filter(p => p.type === 'game');
+        const webApps = projects.filter(p => p.type === 'web-app');
+        const erpApps = projects.filter(p => p.type === 'erp');
+
+        renderProjects(gameProjects, gameContainer);
+        renderProjects(webApps, webAppContainer);
+        renderProjects(erpApps, erpContainer);
     })
     .catch(error => {
         console.error('Hubo un problema al cargar los proyectos:', error);
     });
+
