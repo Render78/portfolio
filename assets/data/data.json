@@ -79,17 +79,43 @@
     },
     {
         "id": 7,
+        "image": "./assets/img/web-apps/retrowear.png",
+        "title": "Geek Haven",
+        "description": "E-Commerce realizado para el curso de React de CODERHOUSE.",
+        "technologies": [
+            "React",
+            "Vite",
+            "Bootstrap 5",
+            "Firebase"
+        ],
+        "github": "https://github.com/Render78/retro-wear",
+        "type": "web-app"
+    },
+    {
+        "id": 8,
+        "image": "./assets/img/games/calculadora.png",
+        "title": "Calculadora",
+        "description": "Calculadora que permite realizar las cuatro operaciones matemáticas básicas.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "github": "https://github.com/Render78/calculadora",
+        "type": "web-app"
+    },
+    {
+        "id": 9,
         "image": "./assets/img/web-apps/staybooker.png",
         "title": "StayBooker",
         "description": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles.",
         "technologies": [
-            "Angular",
+            "Angular 18",
             "Bootstrap 5",
             "Spring Boot",
             "JWT",
             "MercadoPago API"
         ],
-        "github": "https://github.com/Render78/ahorcado",
-        "type": "web-app"
+        "type": "erp"
     }
 ]
