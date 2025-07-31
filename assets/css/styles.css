@@ -379,6 +379,10 @@ img {
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer__title {
@@ -388,6 +392,14 @@ img {
 
 .footer__social {
   margin-bottom: var(--mb-4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer__social .home__social-icon {
+  margin: 0;
 }
 
 .footer__copy {
