@@ -7,6 +7,7 @@
   --first-color: #3c6ff8;
   --second-color: #e5eaf5;
   --bg-color: #101828;
+  --second-bg-color: #181f2a;
 
   --body-font: "Poppins", sans-serif;
   --big-font-size: 2rem;
@@ -111,7 +112,7 @@ img {
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
-  background-color: #181f2a;
+  background-color: var(--second-bg-color);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -131,7 +132,7 @@ img {
     width: 80%;
     height: 100%;
     padding: 2rem;
-    background-color: #181f2a;
+    background-color: var(--second-bg-color);
     transition: 0.5s;
   }
 }
@@ -142,7 +143,7 @@ img {
 
 .nav__link {
   position: relative;
-  color: #fff;
+  color: var(--second-color);
 }
 
 .nav__link:hover {
@@ -236,7 +237,7 @@ img {
 .button {
   display: inline-block;
   background-color: var(--first-color);
-  color: #fff;
+  color: var(--second-color);
   padding: 0.75rem 2.5rem;
   font-weight: var(--font-semi);
   border-radius: 0.5rem;
@@ -374,8 +375,8 @@ img {
 }
 
 .footer {
-  background-color: #181f2a;
-  color: #fff;
+  background-color: var(--second-bg-color);
+  color: var(--second-color);
   text-align: center;
   font-weight: var(--font-semi);
   padding: 2rem 0;
@@ -406,10 +407,8 @@ img {
   font-size: var(--smaller-font-size);
 }
 
-/* MIS ESTILOS */
-
 .card {
-  background-color: #181f2a;
+  background-color: var(--second-bg-color);
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -431,9 +430,8 @@ img {
 }
 
 .github-button:hover {
-  color: #ffffff;
+  color: var(--second-color);
 }
-
 
 .card:hover {
   transform: translateY(-5px);
