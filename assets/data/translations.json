@@ -36,7 +36,9 @@
         "work-subtitle-3": "Software ERP",
         "work-erp": "Software desarrollado con el objetivo para mejorar a las organizaciones y/o empresas a sus operaciones diarias como gestión, control y toma de decisiones.",
         "work-erp-title-1": "StayBooker",
-        "work-erp-description-1": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles."
+        "work-erp-description-1": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles.",
+        "contact-send": "Enviar",
+        "footer": "&#169; 2025 Julián Torres. Todos los derechos reservados"
     },
     "en": {
         "home": "Home",
@@ -75,6 +77,8 @@
         "work-subtitle-3": "ERP Software",
         "work-erp": "Software developed with the goal of helping organizations and companies improve their daily operations such as management, control, and decision-making.",
         "work-erp-title-1": "StayBooker",
-        "work-erp-description-1": "Accommodation booking platform with user, reservation, and payment management oriented for hotels."
+        "work-erp-description-1": "Accommodation booking platform with user, reservation, and payment management oriented for hotels.",
+        "contact-send": "Send",
+        "footer": "&#169; 2025 Julián Torres. All rights reserved"
     }
 }
