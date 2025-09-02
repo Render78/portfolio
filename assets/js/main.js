@@ -56,11 +56,14 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 4
 sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
+let gameProjects = [];
+let webApps = [];
+let erpApps = [];
+let currentLang = localStorage.getItem("lang") || "es";
+
 fetch('./assets/data/data.json')
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Error al cargar el archivo JSON');
-        }
+        if (!response.ok) throw new Error('Error al cargar el archivo JSON');
         return response.json();
     })
     .then(projects => {
@@ -68,43 +71,57 @@ fetch('./assets/data/data.json')
         const webAppContainer = document.getElementById('webAppContainer');
         const erpContainer = document.getElementById('erpContainer');
 
-        const renderProjects = (projectList, container) => {
-            projectList.forEach(project => {
-                const card = document.createElement('div');
-                card.classList.add('card');
+        gameProjects = projects.filter(p => p.type === 'game');
+        webApps = projects.filter(p => p.type === 'web-app');
+        erpApps = projects.filter(p => p.type === 'erp');
 
-                card.innerHTML = `
-          <img src="${project.image}" alt="${project.title}">
+        renderProjects(gameProjects, gameContainer, 'game');
+        renderProjects(webApps, webAppContainer, 'web-app');
+        renderProjects(erpApps, erpContainer, 'erp');
+    })
+    .catch(error => console.error('Hubo un problema al cargar los proyectos:', error));
+
+const renderProjects = (projectList, container, type) => {
+    container.innerHTML = '';
+    projectList.forEach((project, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        let titleText = project.title;
+        let descText = project.description;
+
+        if (translations[currentLang]) {
+            if (type === 'game') {
+                const titleKey = `work-game-title-${index + 1}`;
+                const descKey = `work-game-description-${index + 1}`;
+                titleText = translations[currentLang][titleKey] || project.title;
+                descText = translations[currentLang][descKey] || project.description;
+            } else {
+                if (project.titleKey) titleText = translations[currentLang][project.titleKey] || project.title;
+                if (project.descKey) descText = translations[currentLang][project.descKey] || project.description;
+            }
+        }
+
+        card.innerHTML = `
+          <img src="${project.image}" alt="${titleText}">
           <div class="card-content">
             <div class="card-header">
-              <h4 class="card-title">${project.title}</h4>
+              <h4 class="card-title">${titleText}</h4>
               ${project.github ? `
                 <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
                   <i class="bx bxl-github"></i>
                 </a>` : ''}
             </div>
-            <p class="card-description">${project.description}</p>
+            <p class="card-description">${descText}</p>
             <div class="card-tech">
               ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
             </div>
           </div>
         `;
-
-                container.appendChild(card);
-            });
-        };
-
-        const gameProjects = projects.filter(p => p.type === 'game');
-        const webApps = projects.filter(p => p.type === 'web-app');
-        const erpApps = projects.filter(p => p.type === 'erp');
-
-        renderProjects(gameProjects, gameContainer);
-        renderProjects(webApps, webAppContainer);
-        renderProjects(erpApps, erpContainer);
-    })
-    .catch(error => {
-        console.error('Hubo un problema al cargar los proyectos:', error);
+        container.appendChild(card);
     });
+};
+
 
 const langBtn = document.getElementById("lang-btn");
 const langOptions = document.getElementById("lang-options");
@@ -132,13 +149,23 @@ async function loadTranslations() {
 }
 
 function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem("lang", lang);
+
     document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
-        if (translations[lang] && translations[lang][key]) {            
+        if (translations[lang] && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
         }
     });
-    localStorage.setItem("lang", lang);
+
+    const gameContainer = document.getElementById('gamesContainer');
+    const webAppContainer = document.getElementById('webAppContainer');
+    const erpContainer = document.getElementById('erpContainer');
+
+    renderProjects(gameProjects, gameContainer, 'game');
+    renderProjects(webApps, webAppContainer, 'web-app');
+    renderProjects(erpApps, erpContainer, 'erp');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
