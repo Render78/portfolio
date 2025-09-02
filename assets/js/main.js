@@ -120,3 +120,36 @@ document.addEventListener("click", (e) => {
         langOptions.style.display = "none";
     }
 });
+
+let translations = {};
+
+async function loadTranslations() {
+    const res = await fetch("./assets/data/translations.json");
+    translations = await res.json();
+
+    const savedLang = localStorage.getItem("lang") || "es";
+    setLanguage(savedLang);
+}
+
+function setLanguage(lang) {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+    localStorage.setItem("lang", lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTranslations();
+
+    document.querySelectorAll("#lang-options a").forEach(option => {
+        option.addEventListener("click", (e) => {
+            e.preventDefault();
+            const lang = option.getAttribute("data-lang");
+            setLanguage(lang);
+            document.getElementById("lang-options").style.display = "none";
+        });
+    });
+});
