@@ -5,7 +5,8 @@
         "skills": "Habilidades",
         "work": "Proyectos",
         "contact": "Contacto",
-        "home-title": "¡Buenas!<br>Soy <span class='home__title-color'>Julián Torres</span><br>FullStack Dev"
+        "home-title": "¡Buenas!<br>Soy <span class='home__title-color'>Julián Torres</span><br>FullStack Dev",
+        "about-text": "Soy desarrollador web fullstack, apasionado por crear soluciones digitales que combinan diseño atractivo y funcionalidad. Actualmente trabajo como freelancer, donde aplico mis conocimientos en <b class='text-hover'>front-end</b> y <b class='text-hover'>back-end.</b> Estoy próximo a finalizar la <strong class='text-hover'>Tecnicatura en Programación (UTN - FRC)</strong> y me formé en el stack <b class='text-hover'>MERN</b> en <strong class='text-hover'>CODERHOUSE.</strong> Me gusta mantenerme actualizado y aplicar metodologías como SCRUM para lograr proyectos eficientes, modernos y adaptados a cada necesidad."
     },
     "en": {
         "home": "Home",
@@ -13,6 +14,7 @@
         "skills": "Skills",
         "work": "Projects",
         "contact": "Contact",
-        "home-title": "Hi there!<br>I'm <span class='home__title-color'>Julián Torres</span><br>FullStack Dev"
+        "home-title": "Hi there!<br>I'm <span class='home__title-color'>Julián Torres</span><br>FullStack Dev",
+        "about-text": "I am a fullstack web developer, passionate about creating digital solutions that combine attractive design and functionality. I currently work as a freelancer, where I apply my knowledge in <b class='text-hover'>front-end</b> and <b class='text-hover'>back-end.</b> I am close to finishing the <strong class='text-hover'>Programming Technician (UTN - FRC)</strong> and I trained in the <b class='text-hover'>MERN</b> stack at <strong class='text-hover'>CODERHOUSE.</strong> I like to stay up to date and apply methodologies such as SCRUM to achieve efficient, modern projects adapted to each need."
     }
 }
