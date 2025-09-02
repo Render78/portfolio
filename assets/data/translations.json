@@ -29,8 +29,14 @@
         "work-game-description-6": "Versión web del juego del ahorcado, donde se debe adivinar la palabra antes de que se complete el dibujo.",
         "work-subtitle-2": "Apps Web",
         "work-webapps": "Aplicaciones con enfoque CRUD y conexión a APIs externas, usando tecnologías como JavaScript nativo y Angular para front y Spring Boot para backend.",
+        "work-webapp-title-1": "Geek Haven",
+        "work-webapp-description-1": "E-Commerce realizado para el curso de React de CODERHOUSE.",
+        "work-webapp-title-2": "Calculadora",
+        "work-webapp-description-2": "Calculadora que permite realizar las cuatro operaciones matemáticas básicas.",
         "work-subtitle-3": "Software ERP",
-        "work-erp": "Software desarrollado con el objetivo para mejorar a las organizaciones y/o empresas a sus operaciones diarias como gestión, control y toma de decisiones."
+        "work-erp": "Software desarrollado con el objetivo para mejorar a las organizaciones y/o empresas a sus operaciones diarias como gestión, control y toma de decisiones.",
+        "work-erp-title-1": "StayBooker",
+        "work-erp-description-1": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles."
     },
     "en": {
         "home": "Home",
@@ -62,7 +68,13 @@
         "work-game-description-6": "Web version of the Hangman game, where you must guess the word before the drawing is completed.",
         "work-subtitle-2": "Web applications",
         "work-webapps": "Applications with a CRUD approach and integration with external APIs, using technologies such as vanilla JavaScript and Angular for the frontend, and Spring Boot for the backend.",
+        "work-webapp-title-1": "Geek Haven",
+        "work-webapp-description-1": "E-Commerce developed for the React course at CODERHOUSE.",
+        "work-webapp-title-2": "Calculator",
+        "work-webapp-description-2": "Calculator that allows you to perform the four basic mathematical operations.",
         "work-subtitle-3": "ERP Software",
-        "work-erp": "Software developed with the goal of helping organizations and companies improve their daily operations such as management, control, and decision-making."
+        "work-erp": "Software developed with the goal of helping organizations and companies improve their daily operations such as management, control, and decision-making.",
+        "work-erp-title-1": "StayBooker",
+        "work-erp-description-1": "Accommodation booking platform with user, reservation, and payment management oriented for hotels."
     }
 }
