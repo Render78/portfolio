@@ -4,13 +4,15 @@
         "about": "Acerca de",
         "skills": "Habilidades",
         "work": "Proyectos",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "home-title": "¡Buenas!<br>Soy <span class='home__title-color'>Julián Torres</span><br>FullStack Dev"
     },
     "en": {
         "home": "Home",
         "about": "About",
         "skills": "Skills",
         "work": "Projects",
-        "contact": "Contact"
+        "contact": "Contact",
+        "home-title": "Hi there!<br>I'm <span class='home__title-color'>Julián Torres</span><br>FullStack Dev"
     }
 }

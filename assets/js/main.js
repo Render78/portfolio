@@ -134,8 +134,8 @@ async function loadTranslations() {
 function setLanguage(lang) {
     document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
-        if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
+        if (translations[lang] && translations[lang][key]) {            
+            el.innerHTML = translations[lang][key];
         }
     });
     localStorage.setItem("lang", lang);
