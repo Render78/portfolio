@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <title>Julián Torres - Portfolio</title>
 </head>
@@ -27,7 +27,7 @@
                     <li class="nav__item"><a href="#contact" class="nav__link" data-key="contact">Contacto</a></li>
                     <li class="nav__item nav__lang">
                         <button id="lang-btn" class="nav__link">
-                            <i class='bx bx-globe'></i>
+                            <i class='bi bi-translate'></i>
                         </button>
                         <ul id="lang-options" class="lang__dropdown">
                             <li><a href="#" data-lang="es">Español</a></li>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="nav__toggle" id="nav-toggle">
-                <i class='bx bx-menu'></i>
+                <i class='bi bi-list'></i>
             </div>
         </nav>
     </header>
@@ -55,13 +55,13 @@
 
             <div class="home__social">
                 <a href="https://github.com/Render78" target="_blank" class="home__social-icon"><i
-                        class='bx bxl-github'></i></a>
+                        class='bi bi-github'></i></a>
                 <a href="https://www.linkedin.com/in/mario-juli%C3%A1n-molina-torres-2a8bb7247/" target="_blank"
-                    class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    class="home__social-icon"><i class='bi bi-linkedin'></i></a>
                 <a href="mailto:mariojuliantor@hotmail.com" target="_blank" class="home__social-icon"><i
-                        class='bx bx-envelope'></i></a>
+                        class='bi bi-envelope'></i></a>
                 <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon"><i
-                        class='bx bxl-whatsapp'></i></a>
+                        class='bi bi-whatsapp'></i></a>
             </div>
 
             <div class="home__img">
@@ -118,22 +118,16 @@
 
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-html5 skills__icon'></i>
-                            <span class="skills__name">HTML5</span>
+                            <i class='devicon-html5-plain skills__icon'></i>
+                            <i class="devicon-css3-plain skills__icon"></i>
+                            <span class="skills__name">HTML5 & CSS3</span>
                         </div>
                     </div>
 
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-css3 skills__icon'></i>
-                            <span class="skills__name">CSS3</span>
-                        </div>
-                    </div>
-
-                    <div class="skills__data">
-                        <div class="skills__names">
-                            <i class='bx bxl-javascript skills__icon'></i>
-                            <i class='devicon-typescript-plain skills__icon' style="font-size: 1.5rem;"></i>
+                            <i class='devicon-javascript-plain skills__icon'></i>
+                            <i class='devicon-typescript-plain skills__icon'></i>
                             <span class="skills__name">JavaScript / TypeScript</span>
                         </div>
                     </div>
@@ -148,14 +142,16 @@
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='devicon-bootstrap-plain skills__icon'></i>
-                            <span class="skills__name">Bootstrap</span>
+                            <i class='devicon-tailwindcss-plain skills__icon'></i>
+                            <span class="skills__name">Bootstrap / Tailwind CSS</span>
                         </div>
                     </div>
 
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='devicon-angularjs-plain skills__icon'></i>
-                            <span class="skills__name">Angular</span>
+                            <i class='devicon-react-plain skills__icon'></i>
+                            <span class="skills__name">Angular / React</span>
                         </div>
                     </div>
 
@@ -172,7 +168,8 @@
 
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-nodejs skills__icon'></i>
+                            <i class="devicon-nodejs-plain skills__icon"></i>
+                            <i class="devicon-express-original skills__icon"></i>
                             <span class="skills__name">Node.js / Express</span>
                         </div>
                     </div>
@@ -180,7 +177,16 @@
                     <div class="skills__data">
                         <div class="skills__names">
                             <i class='devicon-java-plain skills__icon'></i>
+                            <i class='devicon-spring-original skills__icon'></i>
                             <span class="skills__name">Java / Spring Boot</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='devicon-csharp-plain skills__icon'></i>
+                            <i class='devicon-dotnetcore-plain skills__icon'></i>
+                            <span class="skills__name">C# / .NET Core</span>
                         </div>
                     </div>
                 </div>
@@ -236,8 +242,8 @@
 
                     <div class="skills__data">
                         <div class="skills__names">
-                            <i class='bx bxl-git skills__icon'></i>
-                            <i class="bx bxl-github skills__icon"></i>
+                            <i class='devicon-git-plain skills__icon'></i>
+                            <i class="devicon-github-plain skills__icon"></i>
                             <span class="skills__name">Git / GitHub</span>
                         </div>
                     </div>
@@ -267,6 +273,13 @@
                         <div class="skills__names">
                             <i class="devicon-postman-plain skills__icon"></i>
                             <span class="skills__name">Postman</span>
+                        </div>
+                    </div>
+
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class="devicon-vitejs-plain skills__icon"></i>
+                            <span class="skills__name">Vite</span>
                         </div>
                     </div>
                 </div>
@@ -326,13 +339,13 @@
         <p class="footer__title text-hover">Julián Torres</p>
         <div class="footer__social">
             <a href="https://github.com/Render78" target="_blank" class="home__social-icon"><i
-                    class='bx bxl-github'></i></a>
+                    class='bi bi-github'></i></a>
             <a href="https://www.linkedin.com/in/mario-juli%C3%A1n-molina-torres-2a8bb7247/" target="_blank"
-                class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                class="home__social-icon"><i class='bi bi-linkedin'></i></a>
             <a href="mailto:mariojuliantor@hotmail.com" target="_blank" class="home__social-icon"><i
-                    class='bx bx-envelope'></i></a>
+                    class='bi bi-envelope'></i></a>
             <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon"><i
-                    class='bx bxl-whatsapp'></i></a>
+                    class='bi bi-whatsapp'></i></a>
         </div>
         <p class="footer__copy" data-key="footer">&#169; 2025 Julián Torres. Todos los derechos reservados</p>
     </footer>
