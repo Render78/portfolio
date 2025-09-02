@@ -56,10 +56,38 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 4
 sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
+const langBtn = document.getElementById("lang-btn");
+const langOptions = document.getElementById("lang-options");
+
+langBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    langOptions.style.display =
+        langOptions.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", (e) => {
+    if (!langBtn.contains(e.target) && !langOptions.contains(e.target)) {
+        langOptions.style.display = "none";
+    }
+});
+
 let gameProjects = [];
 let webApps = [];
 let erpApps = [];
 let currentLang = localStorage.getItem("lang") || "es";
+let translations = {};
+
+async function loadTranslations() {
+    try {
+        const res = await fetch("./assets/data/translations.json");
+        translations = await res.json();
+        const savedLang = localStorage.getItem("lang") || "es";
+        currentLang = savedLang;
+        setLanguage(currentLang);
+    } catch (error) {
+        console.error("Error cargando traducciones:", error);
+    }
+}
 
 fetch('./assets/data/data.json')
     .then(response => {
@@ -70,11 +98,11 @@ fetch('./assets/data/data.json')
         const gameContainer = document.getElementById('gamesContainer');
         const webAppContainer = document.getElementById('webAppContainer');
         const erpContainer = document.getElementById('erpContainer');
-
+        
         gameProjects = projects.filter(p => p.type === 'game');
         webApps = projects.filter(p => p.type === 'web-app');
         erpApps = projects.filter(p => p.type === 'erp');
-
+        
         renderProjects(gameProjects, gameContainer, 'game');
         renderProjects(webApps, webAppContainer, 'web-app');
         renderProjects(erpApps, erpContainer, 'erp');
@@ -83,22 +111,28 @@ fetch('./assets/data/data.json')
 
 const renderProjects = (projectList, container, type) => {
     container.innerHTML = '';
+
     projectList.forEach((project, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
-
+        
         let titleText = project.title;
         let descText = project.description;
 
         if (translations[currentLang]) {
-            if (type === 'game') {
-                const titleKey = `work-game-title-${index + 1}`;
-                const descKey = `work-game-description-${index + 1}`;
-                titleText = translations[currentLang][titleKey] || project.title;
-                descText = translations[currentLang][descKey] || project.description;
-            } else {
-                if (project.titleKey) titleText = translations[currentLang][project.titleKey] || project.title;
-                if (project.descKey) descText = translations[currentLang][project.descKey] || project.description;
+            switch (type) {
+                case 'game':
+                    titleText = translations[currentLang][`work-game-title-${index + 1}`] || project.title;
+                    descText = translations[currentLang][`work-game-description-${index + 1}`] || project.description;
+                    break;
+                case 'web-app':
+                    titleText = translations[currentLang][`work-webapp-title-${index + 1}`] || project.title;
+                    descText = translations[currentLang][`work-webapp-description-${index + 1}`] || project.description;
+                    break;
+                case 'erp':
+                    titleText = translations[currentLang][`work-erp-title-${index + 1}`] || project.title;
+                    descText = translations[currentLang][`work-erp-description-${index + 1}`] || project.description;
+                    break;
             }
         }
 
@@ -118,54 +152,25 @@ const renderProjects = (projectList, container, type) => {
             </div>
           </div>
         `;
+
         container.appendChild(card);
     });
 };
 
-
-const langBtn = document.getElementById("lang-btn");
-const langOptions = document.getElementById("lang-options");
-
-langBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    langOptions.style.display =
-        langOptions.style.display === "block" ? "none" : "block";
-});
-
-document.addEventListener("click", (e) => {
-    if (!langBtn.contains(e.target) && !langOptions.contains(e.target)) {
-        langOptions.style.display = "none";
-    }
-});
-
-let translations = {};
-
-async function loadTranslations() {
-    const res = await fetch("./assets/data/translations.json");
-    translations = await res.json();
-
-    const savedLang = localStorage.getItem("lang") || "es";
-    setLanguage(savedLang);
-}
-
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("lang", lang);
-
+    
     document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (translations[lang] && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
         }
     });
-
-    const gameContainer = document.getElementById('gamesContainer');
-    const webAppContainer = document.getElementById('webAppContainer');
-    const erpContainer = document.getElementById('erpContainer');
-
-    renderProjects(gameProjects, gameContainer, 'game');
-    renderProjects(webApps, webAppContainer, 'web-app');
-    renderProjects(erpApps, erpContainer, 'erp');
+    
+    renderProjects(gameProjects, document.getElementById('gamesContainer'), 'game');
+    renderProjects(webApps, document.getElementById('webAppContainer'), 'web-app');
+    renderProjects(erpApps, document.getElementById('erpContainer'), 'erp');
 }
 
 document.addEventListener("DOMContentLoaded", () => {
