@@ -160,6 +160,46 @@ img {
   background-color: var(--first-color);
 }
 
+.nav__lang {
+  position: relative;
+}
+
+.nav__lang button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: inherit;
+  padding: 0;
+}
+
+.lang__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--second-bg-color);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.lang__dropdown li {
+  padding: 0.5rem 1rem;
+}
+
+.lang__dropdown li a {
+  text-decoration: none;
+  color: var(--second-color);
+}
+
+.lang__dropdown li:hover {
+  background: var(--bg-color);
+}
+
 .nav__logo {
   color: var(--second-color);
 }

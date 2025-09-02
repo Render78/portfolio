@@ -106,3 +106,17 @@ fetch('./assets/data/data.json')
         console.error('Hubo un problema al cargar los proyectos:', error);
     });
 
+const langBtn = document.getElementById("lang-btn");
+const langOptions = document.getElementById("lang-options");
+
+langBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    langOptions.style.display =
+        langOptions.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", (e) => {
+    if (!langBtn.contains(e.target) && !langOptions.contains(e.target)) {
+        langOptions.style.display = "none";
+    }
+});
