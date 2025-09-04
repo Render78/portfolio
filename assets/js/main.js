@@ -143,7 +143,7 @@ const renderProjects = (projectList, container, type) => {
               <h4 class="card-title">${titleText}</h4>
               ${project.github ? `
                 <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
-                  <i class="bx bxl-github"></i>
+                  <i class="bi bi-github"></i>
                 </a>` : ''}
             </div>
             <p class="card-description">${descText}</p>
