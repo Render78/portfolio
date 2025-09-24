@@ -12,12 +12,11 @@ const showMenu = (toggleId, navId) => {
 showMenu('nav-toggle', 'nav-menu')
 
 
-const navLink = document.querySelectorAll('.nav__link')
+const navLink = document.querySelectorAll('.nav__link:not(#lang-btn)')
 
 function linkAction() {
     const navMenu = document.getElementById('nav-menu')
-
-    navMenu.classList.remove('show')
+    if (navMenu) navMenu.classList.remove('show')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
@@ -98,11 +97,11 @@ fetch('./assets/data/data.json')
         const gameContainer = document.getElementById('gamesContainer');
         const webAppContainer = document.getElementById('webAppContainer');
         const erpContainer = document.getElementById('erpContainer');
-        
+
         gameProjects = projects.filter(p => p.type === 'game');
         webApps = projects.filter(p => p.type === 'web-app');
         erpApps = projects.filter(p => p.type === 'erp');
-        
+
         renderProjects(gameProjects, gameContainer, 'game');
         renderProjects(webApps, webAppContainer, 'web-app');
         renderProjects(erpApps, erpContainer, 'erp');
@@ -115,7 +114,7 @@ const renderProjects = (projectList, container, type) => {
     projectList.forEach((project, index) => {
         const card = document.createElement('div');
         card.classList.add('card');
-        
+
         let titleText = project.title;
         let descText = project.description;
 
@@ -160,14 +159,14 @@ const renderProjects = (projectList, container, type) => {
 function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem("lang", lang);
-    
+
     document.querySelectorAll("[data-key]").forEach(el => {
         const key = el.getAttribute("data-key");
         if (translations[lang] && translations[lang][key]) {
             el.innerHTML = translations[lang][key];
         }
     });
-    
+
     renderProjects(gameProjects, document.getElementById('gamesContainer'), 'game');
     renderProjects(webApps, document.getElementById('webAppContainer'), 'web-app');
     renderProjects(erpApps, document.getElementById('erpContainer'), 'erp');
@@ -182,6 +181,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const lang = option.getAttribute("data-lang");
             setLanguage(lang);
             document.getElementById("lang-options").style.display = "none";
+            // close mobile nav after selecting language
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu) navMenu.classList.remove('show');
         });
     });
 });
