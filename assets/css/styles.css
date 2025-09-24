@@ -200,6 +200,20 @@ img {
   background: var(--bg-color);
 }
 
+.active__lang {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+}
+
+.active__lang__img {
+  width: 20px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
 .nav__logo {
   color: var(--second-color);
 }
