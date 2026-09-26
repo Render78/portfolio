@@ -1,4 +1,3 @@
-
 const showMenu = (toggleId, navId) => {
     const toggle = document.getElementById(toggleId),
         nav = document.getElementById(navId)
@@ -12,7 +11,7 @@ const showMenu = (toggleId, navId) => {
 showMenu('nav-toggle', 'nav-menu')
 
 
-const navLink = document.querySelectorAll('.nav__link:not(#lang-btn)')
+const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction() {
     const navMenu = document.getElementById('nav-menu')
@@ -47,7 +46,6 @@ const sr = ScrollReveal({
     distance: '60px',
     duration: 2000,
     delay: 200,
-
 });
 
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text', {});
@@ -55,38 +53,34 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img', { delay: 4
 sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
 
-const langBtn = document.getElementById("lang-btn");
-const langOptions = document.getElementById("lang-options");
 
-langBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    langOptions.style.display =
-        langOptions.style.display === "block" ? "none" : "block";
-});
+const renderProjects = (projectList, container) => {
+    container.innerHTML = '';
 
-document.addEventListener("click", (e) => {
-    if (!langBtn.contains(e.target) && !langOptions.contains(e.target)) {
-        langOptions.style.display = "none";
-    }
-});
+    projectList.forEach((project) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
 
-let gameProjects = [];
-let webApps = [];
-let erpApps = [];
-let currentLang = localStorage.getItem("lang") || "es";
-let translations = {};
+        card.innerHTML = `
+          <img src="${project.image}" alt="${project.title}">
+          <div class="card-content">
+            <div class="card-header">
+              <h4 class="card-title">${project.title}</h4>
+              ${project.github ? `
+                <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
+                  <i class="bi bi-github"></i>
+                </a>` : ''}
+            </div>
+            <p class="card-description">${project.description}</p>
+            <div class="card-tech">
+              ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
+            </div>
+          </div>
+        `;
 
-async function loadTranslations() {
-    try {
-        const res = await fetch("./assets/data/translations.json");
-        translations = await res.json();
-        const savedLang = localStorage.getItem("lang") || "es";
-        currentLang = savedLang;
-        setLanguage(currentLang);
-    } catch (error) {
-        console.error("Error cargando traducciones:", error);
-    }
-}
+        container.appendChild(card);
+    });
+};
 
 fetch('./assets/data/data.json')
     .then(response => {
@@ -98,95 +92,15 @@ fetch('./assets/data/data.json')
         const webAppContainer = document.getElementById('webAppContainer');
         const erpContainer = document.getElementById('erpContainer');
 
-        gameProjects = projects.filter(p => p.type === 'game');
-        webApps = projects.filter(p => p.type === 'web-app');
-        erpApps = projects.filter(p => p.type === 'erp');
+        const gameProjects = projects.filter(p => p.type === 'game');
+        const webApps = projects.filter(p => p.type === 'web-app');
+        const erpApps = projects.filter(p => p.type === 'erp');
 
-        renderProjects(gameProjects, gameContainer, 'game');
-        renderProjects(webApps, webAppContainer, 'web-app');
-        renderProjects(erpApps, erpContainer, 'erp');
+        if (gameContainer) renderProjects(gameProjects, gameContainer);
+        if (webAppContainer) renderProjects(webApps, webAppContainer);
+        if (erpContainer) renderProjects(erpApps, erpContainer);
     })
     .catch(error => console.error('Hubo un problema al cargar los proyectos:', error));
-
-const renderProjects = (projectList, container, type) => {
-    container.innerHTML = '';
-
-    projectList.forEach((project, index) => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        let titleText = project.title;
-        let descText = project.description;
-
-        if (translations[currentLang]) {
-            switch (type) {
-                case 'game':
-                    titleText = translations[currentLang][`work-game-title-${index + 1}`] || project.title;
-                    descText = translations[currentLang][`work-game-description-${index + 1}`] || project.description;
-                    break;
-                case 'web-app':
-                    titleText = translations[currentLang][`work-webapp-title-${index + 1}`] || project.title;
-                    descText = translations[currentLang][`work-webapp-description-${index + 1}`] || project.description;
-                    break;
-                case 'erp':
-                    titleText = translations[currentLang][`work-erp-title-${index + 1}`] || project.title;
-                    descText = translations[currentLang][`work-erp-description-${index + 1}`] || project.description;
-                    break;
-            }
-        }
-
-        card.innerHTML = `
-          <img src="${project.image}" alt="${titleText}">
-          <div class="card-content">
-            <div class="card-header">
-              <h4 class="card-title">${titleText}</h4>
-              ${project.github ? `
-                <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
-                  <i class="bi bi-github"></i>
-                </a>` : ''}
-            </div>
-            <p class="card-description">${descText}</p>
-            <div class="card-tech">
-              ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
-            </div>
-          </div>
-        `;
-
-        container.appendChild(card);
-    });
-};
-
-function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem("lang", lang);
-
-    document.querySelectorAll("[data-key]").forEach(el => {
-        const key = el.getAttribute("data-key");
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
-    });
-
-    renderProjects(gameProjects, document.getElementById('gamesContainer'), 'game');
-    renderProjects(webApps, document.getElementById('webAppContainer'), 'web-app');
-    renderProjects(erpApps, document.getElementById('erpContainer'), 'erp');
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    loadTranslations();
-
-    document.querySelectorAll("#lang-options a").forEach(option => {
-        option.addEventListener("click", (e) => {
-            e.preventDefault();
-            const lang = option.getAttribute("data-lang");
-            setLanguage(lang);
-            document.getElementById("lang-options").style.display = "none";
-            // close mobile nav after selecting language
-            const navMenu = document.getElementById('nav-menu');
-            if (navMenu) navMenu.classList.remove('show');
-        });
-    });
-});
 
 
 const contactForm = document.getElementById('contact-form');
@@ -202,13 +116,11 @@ contactForm.addEventListener('submit', function (e) {
     const email = emailInput.value.trim();
     const message = messageInput.value.trim();
 
-    // Validación 1: Campos vacíos
     if (!name || !email || !message) {
         alert('Por favor, completa todos los campos.');
         return;
     }
 
-    // Validación 2: Formato de correo válido
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert('Por favor, ingresa un correo electrónico válido.');
@@ -216,19 +128,12 @@ contactForm.addEventListener('submit', function (e) {
         return;
     }
 
-    // Configuración del correo
     const recipient = 'mjuliantor@gmail.com';
     const subject = 'Contacto desde portfolio';
-
-    // Construcción del cuerpo del mensaje con datos del remitente
     const body = `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`;
 
-    // Creación del enlace mailto codificado
     const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    // Abrir el cliente de correo predeterminado del usuario
     window.location.href = mailtoUrl;
-
-    // Limpiar el formulario tras abrir el cliente de correo
     contactForm.reset();
 });
