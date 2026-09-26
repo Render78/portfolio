@@ -35,7 +35,8 @@
                                         class="active__lang__img">Español</a>
                             </li>
                             <li><a href="#" data-lang="en" class="active__lang"><img
-                                        src="https://flagcdn.com/w20/us.png" alt="English" class="active__lang__img">English</a>
+                                        src="https://flagcdn.com/w20/us.png" alt="English"
+                                        class="active__lang__img">English</a>
                             </li>
                         </ul>
                     </li>
@@ -330,13 +331,13 @@
             <h2 class="section-title" data-key="contact">Contacto</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Nombre - Name" class="contact__input">
-                    <input type="mail" placeholder="E-Mail" class="contact__input">
-                    <textarea name="" id="" cols="0" rows="10" class="contact__input" placeholder="Mensaje - Message"
-                        style="resize: none;"></textarea>
-                    <button type="submit" value="Enviar" class="contact__button button"
-                        data-key="contact-send">Enviar</button>
+                <form action="" class="contact__form" id="contact-form">
+                    <input type="text" id="name" name="name" placeholder="Nombre - Name" class="contact__input">
+                    <input type="email" id="email" name="email" placeholder="E-Mail" class="contact__input">
+                    <textarea id="message" name="message" cols="0" rows="10" class="contact__input"
+                        placeholder="Mensaje - Message" style="resize: none;"></textarea>
+
+                    <button type="submit" class="contact__button button" data-key="contact-send">Enviar</button>
                 </form>
             </div>
         </section>

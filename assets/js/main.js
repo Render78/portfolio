@@ -187,3 +187,48 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+const contactForm = document.getElementById('contact-form');
+
+contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const messageInput = document.getElementById('message');
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    // Validación 1: Campos vacíos
+    if (!name || !email || !message) {
+        alert('Por favor, completa todos los campos.');
+        return;
+    }
+
+    // Validación 2: Formato de correo válido
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingresa un correo electrónico válido.');
+        emailInput.focus();
+        return;
+    }
+
+    // Configuración del correo
+    const recipient = 'mjuliantor@gmail.com';
+    const subject = 'Contacto desde portfolio';
+
+    // Construcción del cuerpo del mensaje con datos del remitente
+    const body = `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`;
+
+    // Creación del enlace mailto codificado
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Abrir el cliente de correo predeterminado del usuario
+    window.location.href = mailtoUrl;
+
+    // Limpiar el formulario tras abrir el cliente de correo
+    contactForm.reset();
+});
