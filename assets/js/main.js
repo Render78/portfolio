@@ -51,7 +51,7 @@ const sr = ScrollReveal({
 sr.reveal('.home__data, .timeline__item, .skills__subtitle, .skills__text', {});
 sr.reveal('.home__img, .experience__intro, .skills__img', { delay: 400 });
 sr.reveal('.home__social-icon', { interval: 200 });
-sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+sr.reveal('.skills__data, .contact__input', { interval: 200 });
 
 
 const renderProjects = (projectList, container) => {
@@ -80,6 +80,8 @@ const renderProjects = (projectList, container) => {
 
         container.appendChild(card);
     });
+
+    sr.reveal(container.querySelectorAll('.card'), { interval: 200 });
 };
 
 fetch('./assets/data/data.json')
