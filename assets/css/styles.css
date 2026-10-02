@@ -302,32 +302,96 @@ img {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }
 
-.about__container {
-  row-gap: 2rem;
+.experience__container {
+  gap: 2.5rem;
+}
+
+.experience__intro {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.timeline-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.timeline-group__title {
+  position: relative;
+  margin: 0 0 2rem;
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
   text-align: center;
 }
 
-.about__subtitle {
-  margin-bottom: var(--mb-2);
+.timeline-group__title::after {
+  position: absolute;
+  content: "";
+  width: 64px;
+  height: 0.18rem;
+  left: 0;
+  right: 0;
+  bottom: -0.65rem;
+  margin: auto;
+  background-color: var(--first-color);
 }
 
-.text-hover {
-  transition: 0.3s;
+.timeline {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0 0 0 1.5rem;
+  list-style: none;
+  border-left: 2px solid var(--first-color);
 }
 
-.text-hover:hover {
+.timeline__item {
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.timeline__item::before {
+  position: absolute;
+  content: "";
+  width: 0.85rem;
+  height: 0.85rem;
+  top: 0.2rem;
+  left: calc(-1.5rem - 0.48rem);
+  background-color: var(--bg-color);
+  border: 3px solid var(--first-color);
+  border-radius: 50%;
+}
+
+.timeline__date,
+.timeline__type {
   color: var(--first-color);
-  cursor: default;
+  font-size: 1rem;
+  font-weight: var(--font-semi);
 }
 
-
-.about__img {
-  justify-self: center;
-}
-
-.about__img img {
-  width: 200px;
+.timeline__content {
+  padding: 1.25rem;
+  background-color: var(--second-bg-color);
   border-radius: 0.5rem;
+}
+
+.timeline__title {
+  margin: 0.35rem 0;
+  font-size: 1.25rem;
+}
+
+.timeline__place {
+  margin-bottom: 0.75rem;
+  font-weight: var(--font-semi);
+  font-size: 1.05rem;
+}
+
+.timeline__content > p:last-child {
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .skills__container {
@@ -560,12 +624,6 @@ img {
     bottom: 25%;
   }
 
-  .about__container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    text-align: initial;
-  }
-
   .skills__container {
     grid-template-columns: 0.7fr;
     justify-content: center;
@@ -638,12 +696,10 @@ img {
     bottom: 10%;
   }
 
-  .about__container {
-    padding-top: 2rem;
-  }
-
-  .about__img img {
-    width: 300px;
+  .timeline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 2rem;
   }
 
   .skills__container {

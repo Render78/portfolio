@@ -21,7 +21,7 @@
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link active-link" data-key="home">Inicio</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link" data-key="about">Acerca de</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link" data-key="experience">Experiencia</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link" data-key="skills">Habilidades</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link" data-key="work">Proyectos</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link" data-key="contact">Contacto</a></li>                    
@@ -71,28 +71,50 @@
             </div>
         </section>
 
-        <section class="about section " id="about">
-            <h2 class="section-title" data-key="about">Acerca de mí</h2>
+        <section class="experience section" id="about">
+            <div class="experience__container bd-grid">
+                <p class="experience__intro">
+                    Soy desarrollador web fullstack y creo soluciones digitales que combinan diseño y funcionalidad.
+                    Trabajo como freelancer, estoy próximo a finalizar la Tecnicatura en Programación en UTN-FRC y me
+                    formé en el stack MERN en Coderhouse.
+                </p>
 
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="">
-                </div>
+                <div class="timeline-grid">
+                    <section class="timeline-group" aria-labelledby="experience-title">
+                        <h2 class="timeline-group__title" id="experience-title">Experiencia profesional</h2>
+                        <ol class="timeline" aria-label="Experiencia profesional">
+                            <li class="timeline__item">
+                                <span class="timeline__date">2024 - Actualidad</span>
+                                <article class="timeline__content">
+                                    <h3 class="timeline__title">Desarrollador web fullstack</h3>
+                                    <p class="timeline__place">Freelancer</p>
+                                    <p>Desarrollo de sitios y aplicaciones web a medida, desde interfaces responsivas hasta APIs y gestión de datos.</p>
+                                </article>
+                            </li>
+                        </ol>
+                    </section>
 
-                <div>
-                    <h2 class="about__subtitle text-hover">Julián Torres</h2>
-                    <p class="about__text" data-key="about-text">Soy desarrollador web fullstack, apasionado por crear
-                        soluciones digitales
-                        que combinan diseño atractivo y funcionalidad. Actualmente trabajo como freelancer, donde aplico
-                        mis conocimientos en <b class="text-hover">front-end</b> y <b class="text-hover">back-end.</b>
-                        Estoy próximo a finalizar la
-                        <strong class="text-hover">Tecnicatura en
-                            Programación (UTN - FRC)</strong> y me formé en el stack <b class="text-hover">MERN</b> en
-                        <strong class="text-hover">CODERHOUSE.</strong> Me gusta
-                        mantenerme
-                        actualizado y aplicar metodologías como SCRUM para lograr proyectos eficientes, modernos y
-                        adaptados a cada necesidad.
-                    </p>
+                    <section class="timeline-group" aria-labelledby="education-title">
+                        <h2 class="timeline-group__title" id="education-title">Educación</h2>
+                        <ol class="timeline" aria-label="Educación">
+                            <li class="timeline__item">
+                                <span class="timeline__date">2022 - Actualidad</span>
+                                <article class="timeline__content">
+                                    <h3 class="timeline__title">Tecnicatura Universitaria en Programación</h3>
+                                    <p class="timeline__place">Universidad Tecnológica Nacional - FRC</p>
+                                    <p>Formación en programación, algoritmos, bases de datos y desarrollo de software. Próximo a finalizar.</p>
+                                </article>
+                            </li>
+                            <li class="timeline__item">
+                                <span class="timeline__date">2023</span>
+                                <article class="timeline__content">
+                                    <h3 class="timeline__title">Desarrollo Full Stack MERN</h3>
+                                    <p class="timeline__place">Coderhouse</p>
+                                    <p>Formación práctica en MongoDB, Express, React y Node.js para construir aplicaciones web fullstack.</p>
+                                </article>
+                            </li>
+                        </ol>
+                    </section>
                 </div>
             </div>
         </section>
