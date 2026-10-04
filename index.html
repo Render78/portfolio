@@ -347,12 +347,24 @@
             <h2 class="section-title" data-key="contact">Contacto</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form" id="contact-form">
-                    <input type="text" id="name" name="name" placeholder="Nombre - Name" class="contact__input">
-                    <input type="email" id="email" name="email" placeholder="E-Mail" class="contact__input">
-                    <textarea id="message" name="message" cols="0" rows="10" class="contact__input"
-                        placeholder="Mensaje - Message" style="resize: none;"></textarea>
-
+                <form action="" class="contact__form" id="contact-form" novalidate>
+                    <div class="contact__field">
+                        <input type="text" id="name" name="name" placeholder="Nombre completo" class="contact__input"
+                            aria-label="Nombre" aria-describedby="name-error">
+                        <span class="contact__error" id="name-error" aria-live="polite"></span>
+                    </div>
+                    <div class="contact__field">
+                        <input type="email" id="email" name="email" placeholder="E-Mail" class="contact__input"
+                            aria-label="Correo electrónico" aria-describedby="email-error">
+                        <span class="contact__error" id="email-error" aria-live="polite"></span>
+                    </div>
+                    <div class="contact__field">
+                        <textarea id="message" name="message" cols="0" rows="10" class="contact__input"
+                            placeholder="Mensaje" style="resize: none;" aria-label="Mensaje"
+                            aria-describedby="message-error"></textarea>
+                        <span class="contact__error" id="message-error" aria-live="polite"></span>
+                    </div>
+                    <p class="contact__status" id="contact-status" role="status" aria-live="polite"></p>
                     <button type="submit" class="contact__button button" data-key="contact-send">Enviar</button>
                 </form>
             </div>

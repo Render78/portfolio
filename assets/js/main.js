@@ -107,35 +107,57 @@ fetch('./assets/data/data.json')
 
 const contactForm = document.getElementById('contact-form');
 
-contactForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+if (contactForm) {
+    const fields = [
+        { input: document.getElementById('name'), error: document.getElementById('name-error') },
+        { input: document.getElementById('email'), error: document.getElementById('email-error') },
+        { input: document.getElementById('message'), error: document.getElementById('message-error') }
+    ];
+    const status = document.getElementById('contact-status');
+    let submitted = false;
 
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
+    const getError = (input) => {
+        const value = input.value.trim();
+        if (!value) return 'Este campo es obligatorio.';
+        if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+            return 'Ingresa un correo electrónico válido.';
+        }
+        return '';
+    };
 
-    const name = nameInput.value.trim();
-    const email = emailInput.value.trim();
-    const message = messageInput.value.trim();
+    const validateField = ({ input, error }) => {
+        const message = getError(input);
+        error.textContent = message;
+        input.setAttribute('aria-invalid', String(Boolean(message)));
+        return !message;
+    };
 
-    if (!name || !email || !message) {
-        alert('Por favor, completa todos los campos.');
-        return;
-    }
+    fields.forEach((field) => {
+        field.input.addEventListener('blur', () => validateField(field));
+        field.input.addEventListener('input', () => {
+            status.textContent = '';
+            if (field.error.textContent || submitted) validateField(field);
+        });
+    });
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, ingresa un correo electrónico válido.');
-        emailInput.focus();
-        return;
-    }
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        submitted = true;
+        status.textContent = '';
 
-    const recipient = 'mjuliantor@gmail.com';
-    const subject = 'Contacto desde portfolio';
-    const body = `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`;
+        const isValid = fields.map(validateField).every(Boolean);
+        if (!isValid) {
+            fields.find(({ input }) => input.getAttribute('aria-invalid') === 'true').input.focus();
+            return;
+        }
 
-    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const [nameField, emailField, messageField] = fields;
+        const recipient = 'mjuliantor@gmail.com';
+        const subject = 'Contacto desde portfolio';
+        const body = `Nombre: ${nameField.input.value.trim()}\nCorreo: ${emailField.input.value.trim()}\n\nMensaje:\n${messageField.input.value.trim()}`;
+        const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-    window.location.href = mailtoUrl;
-    contactForm.reset();
-});
+        window.location.href = mailtoUrl;
+        status.textContent = 'Tu mensaje está listo. Confirma el envío desde tu aplicación de correo.';
+    });
+}
