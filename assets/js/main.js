@@ -54,6 +54,18 @@ sr.reveal('.home__social-icon', { interval: 200 });
 sr.reveal('.skills__data, .contact__input', { interval: 200 });
 
 
+const imageViewer = document.getElementById('image-viewer');
+const imageViewerImage = document.getElementById('image-viewer-image');
+const imageViewerTitle = document.getElementById('image-viewer-title');
+const imageViewerClose = document.getElementById('image-viewer-close');
+
+if (imageViewer && imageViewerImage && imageViewerTitle && imageViewerClose) {
+    imageViewerClose.addEventListener('click', () => imageViewer.close());
+    imageViewer.addEventListener('click', (event) => {
+        if (event.target === imageViewer) imageViewer.close();
+    });
+}
+
 const renderProjects = (projectList, container) => {
     container.innerHTML = '';
 
@@ -62,7 +74,10 @@ const renderProjects = (projectList, container) => {
         card.classList.add('card');
 
         card.innerHTML = `
-          <img src="${project.image}" alt="${project.title}">
+          <button class="card__image-button" type="button" aria-label="Ampliar imagen de ${project.title}">
+            <img src="${project.image}" alt="${project.title} - captura del proyecto">
+            <span class="card__image-hint"><i class="bi bi-zoom-in" aria-hidden="true"></i> Ampliar imagen</span>
+          </button>
           <div class="card-content">
             <div class="card-header">
               <h4 class="card-title">${project.title}</h4>
@@ -77,6 +92,17 @@ const renderProjects = (projectList, container) => {
             </div>
           </div>
         `;
+
+        const imageButton = card.querySelector('.card__image-button');
+        imageButton.addEventListener('click', () => {
+            if (!imageViewer || !imageViewerImage || !imageViewerTitle) return;
+
+            const image = imageButton.querySelector('img');
+            imageViewerImage.src = image.src;
+            imageViewerImage.alt = image.alt;
+            imageViewerTitle.textContent = project.title;
+            imageViewer.showModal();
+        });
 
         container.appendChild(card);
     });
