@@ -82,7 +82,7 @@ const renderProjects = (projectList, container) => {
             <div class="card-header">
               <h4 class="card-title">${project.title}</h4>
               ${project.github ? `
-                <a href="${project.github}" target="_blank" class="github-button" title="Ver en GitHub">
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="Ver en GitHub">
                   <i class="bi bi-github"></i>
                 </a>` : ''}
             </div>
@@ -90,6 +90,10 @@ const renderProjects = (projectList, container) => {
             <div class="card-tech">
               ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
             </div>
+            ${project.website ? `
+              <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="button website-button">
+                Visitar sitio <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+              </a>` : ''}
           </div>
         `;
 
@@ -119,14 +123,17 @@ fetch('./assets/data/data.json')
         const gameContainer = document.getElementById('gamesContainer');
         const webAppContainer = document.getElementById('webAppContainer');
         const erpContainer = document.getElementById('erpContainer');
+        const websiteContainer = document.getElementById('websiteContainer');
 
         const gameProjects = projects.filter(p => p.type === 'game');
         const webApps = projects.filter(p => p.type === 'web-app');
         const erpApps = projects.filter(p => p.type === 'erp');
+        const websites = projects.filter(p => p.type === 'website');
 
         if (gameContainer) renderProjects(gameProjects, gameContainer);
         if (webAppContainer) renderProjects(webApps, webAppContainer);
         if (erpContainer) renderProjects(erpApps, erpContainer);
+        if (websiteContainer) renderProjects(websites, websiteContainer);
     })
     .catch(error => console.error('Hubo un problema al cargar los proyectos:', error));
 

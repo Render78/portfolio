@@ -128,7 +128,8 @@
             "CSS",
             "JavaScript"
         ],
-        "type": "webs"
+        "website": "https://rendered.com.ar",
+        "type": "website"
     },
     {
         "id": 11,
@@ -140,6 +141,7 @@
             "CSS",
             "JavaScript"
         ],
-        "type": "webs"
+        "website": "https://kickoff.com.ar",
+        "type": "website"
     }
 ]
