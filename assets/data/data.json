@@ -9,7 +9,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/tetris/",
         "github": "https://github.com/Render78/tetris",
         "type": "game"
     },
@@ -23,7 +23,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/pong/",
         "github": "https://github.com/Render78/pong",
         "type": "game"
     },
@@ -37,7 +37,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/snake-game/",
         "github": "https://github.com/Render78/snake-game",
         "type": "game"
     },
@@ -51,7 +51,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/memo-test/",
         "github": "https://github.com/Render78/memo-test",
         "type": "game"
     },
@@ -65,7 +65,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/tateti/",
         "github": "https://github.com/Render78/tateti",
         "type": "game"
     },
@@ -79,7 +79,7 @@
             "CSS",
             "JavaScript"
         ],
-        "demo": "https://example.com",
+        "demo": "https://render78.github.io/ahorcado/",
         "github": "https://github.com/Render78/ahorcado",
         "type": "game"
     },
