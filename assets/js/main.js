@@ -85,15 +85,15 @@ const renderProjects = (projectList, container) => {
                 <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="Ver en GitHub">
                   <i class="bi bi-github"></i>
                 </a>` : ''}
+              ${project.website ? `
+                <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="github-button" title="Visitar sitio web" aria-label="Visitar sitio web de ${project.title}">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>` : ''}
             </div>
             <p class="card-description">${project.description}</p>
             <div class="card-tech">
               ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
             </div>
-            ${project.website ? `
-              <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="button website-button">
-                Visitar sitio <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-              </a>` : ''}
           </div>
         `;
 
