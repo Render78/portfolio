@@ -126,7 +126,9 @@
         "technologies": [
             "HTML",
             "CSS",
-            "JavaScript"
+            "JavaScript",
+            "GSAP",
+            "Bootstrap Icons"
         ],
         "website": "https://rendered.com.ar",
         "type": "website"
@@ -139,7 +141,10 @@
         "technologies": [
             "HTML",
             "CSS",
-            "JavaScript"
+            "JavaScript",
+            "GSAP",
+            "Tailwind CSS",
+            "Font Awesome"
         ],
         "website": "https://kickoff.com.ar",
         "type": "website"
