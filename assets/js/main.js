@@ -10,6 +10,8 @@ const showMenu = (toggleId, navId) => {
 }
 showMenu('nav-toggle', 'nav-menu')
 
+const copyrightYear = document.getElementById('copyright-year')
+if (copyrightYear) copyrightYear.textContent = new Date().getFullYear()
 
 const navLink = document.querySelectorAll('.nav__link')
 
