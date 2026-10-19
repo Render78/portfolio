@@ -117,5 +117,29 @@
             "MercadoPago API"
         ],
         "type": "erp"
+    },
+    {
+        "id": 10,
+        "image": "./assets/img/websites/rendered.png",
+        "title": "RENDERED",
+        "description": "Sitio web comercial para servicios de desarrollo web, software a medida y soporte técnico con diseño responsive, SEO y optimización de conversión.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "type": "webs"
+    },
+    {
+        "id": 11,
+        "image": "./assets/img/websites/kickoff.png",
+        "title": "KICKOFF",
+        "description": "Landing page promocional para la difusión de eventos, talleres de cosplay. Optimizada para dispositivos móviles.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "type": "webs"
     }
 ]
