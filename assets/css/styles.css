@@ -602,9 +602,7 @@ img {
   color: var(--second-color);
   background: rgba(16, 24, 40, 0.82);
   font-size: var(--smaller-font-size);
-  opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  opacity: 1;
 }
 
 .card-header {
@@ -634,12 +632,6 @@ img {
 .card:hover .card__image-button img,
 .card__image-button:focus-visible img {
   transform: scale(1.035);
-}
-
-.card:hover .card__image-hint,
-.card__image-button:focus-visible .card__image-hint {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .card-content {
@@ -731,17 +723,9 @@ img {
   background: var(--first-color);
 }
 
-@media (hover: none) {
-  .card__image-hint {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card__image-button img,
-  .card__image-hint,
   .image-viewer__close {
     transition: none;
   }
