@@ -83,14 +83,20 @@ const renderProjects = (projectList, container) => {
           <div class="card-content">
             <div class="card-header">
               <h4 class="card-title">${project.title}</h4>
-              ${project.github ? `
-                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="Ver en GitHub">
-                  <i class="bi bi-github"></i>
-                </a>` : ''}
-              ${project.website ? `
-                <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="github-button" title="Visitar sitio web" aria-label="Visitar sitio web de ${project.title}">
-                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-                </a>` : ''}
+              <div class="card-actions">
+                ${project.demo ? `
+                  <a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="github-button" title="Jugar demo" aria-label="Jugar demo de ${project.title}">
+                    <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                  </a>` : ''}
+                ${project.github ? `
+                  <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="Ver en GitHub">
+                    <i class="bi bi-github"></i>
+                  </a>` : ''}
+                ${project.website ? `
+                  <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="github-button" title="Visitar sitio web" aria-label="Visitar sitio web de ${project.title}">
+                    <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                  </a>` : ''}
+              </div>
             </div>
             <p class="card-description">${project.description}</p>
             <div class="card-tech">

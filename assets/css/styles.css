@@ -612,6 +612,12 @@ img {
   margin-bottom: 0.5rem;
 }
 
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .github-button {
   color: var(--first-color);
   font-size: 2rem;
