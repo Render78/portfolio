@@ -4,7 +4,8 @@ const showMenu = (toggleId, navId) => {
 
     if (toggle && nav) {
         toggle.addEventListener('click', () => {
-            nav.classList.toggle('show')
+            const isOpen = nav.classList.toggle('show')
+            toggle.setAttribute('aria-expanded', String(isOpen))
         })
     }
 }
@@ -17,7 +18,9 @@ const navLink = document.querySelectorAll('.nav__link')
 
 function linkAction() {
     const navMenu = document.getElementById('nav-menu')
+    const navToggle = document.getElementById('nav-toggle')
     if (navMenu) navMenu.classList.remove('show')
+    if (navToggle) navToggle.setAttribute('aria-expanded', 'false')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
@@ -60,11 +63,79 @@ const imageViewer = document.getElementById('image-viewer');
 const imageViewerImage = document.getElementById('image-viewer-image');
 const imageViewerTitle = document.getElementById('image-viewer-title');
 const imageViewerClose = document.getElementById('image-viewer-close');
+const languageToggle = document.getElementById('language-toggle');
+let currentLanguage = 'es';
+let allProjects = [];
 
 if (imageViewer && imageViewerImage && imageViewerTitle && imageViewerClose) {
     imageViewerClose.addEventListener('click', () => imageViewer.close());
     imageViewer.addEventListener('click', (event) => {
         if (event.target === imageViewer) imageViewer.close();
+    });
+}
+
+let translations = {};
+
+const applyLanguage = (language) => {
+    currentLanguage = language;
+    const copy = translations[language];
+
+    document.documentElement.lang = language;
+    document.title = language === 'en' ? 'Julián Torres - Portfolio' : 'Portfolio de Julián Torres';
+
+    document.querySelectorAll('[data-key]').forEach((element) => {
+        const key = element.dataset.key;
+        if (!copy[key]) return;
+        if (element.dataset.keyHtml === 'true') {
+            element.innerHTML = copy[key];
+        } else {
+            element.textContent = copy[key];
+        }
+    });
+
+    document.querySelectorAll('[data-key-aria-label]').forEach((element) => {
+        const key = element.dataset.keyAriaLabel;
+        if (copy[key]) element.setAttribute('aria-label', copy[key]);
+    });
+    document.querySelectorAll('[data-key-placeholder]').forEach((element) => {
+        const key = element.dataset.keyPlaceholder;
+        if (copy[key]) element.setAttribute('placeholder', copy[key]);
+    });
+    document.querySelectorAll('[data-key-alt]').forEach((element) => {
+        const key = element.dataset.keyAlt;
+        if (copy[key]) element.setAttribute('alt', copy[key]);
+    });
+
+    const contactStatus = document.getElementById('contact-status');
+    if (contactStatus && contactStatus.textContent) {
+        contactStatus.textContent = copy['contact-status'];
+    }
+
+    document.querySelectorAll('.contact__input[aria-invalid="true"]').forEach((input) => {
+        const error = document.getElementById(`${input.id}-error`);
+        if (!error) return;
+        const isInvalidEmail = input.type === 'email' && input.value.trim()
+            && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+        error.textContent = input.value.trim() && isInvalidEmail
+            ? copy['email-invalid']
+            : copy['contact-required'];
+    });
+
+    if (languageToggle) {
+        languageToggle.textContent = language === 'es' ? 'EN' : 'ES';
+        languageToggle.setAttribute(
+            'aria-label',
+            language === 'es' ? 'Cambiar idioma a inglés' : 'Switch language to Spanish'
+        );
+    }
+
+    renderProjectCollections();
+};
+
+if (languageToggle) {
+    languageToggle.disabled = true;
+    languageToggle.addEventListener('click', () => {
+        applyLanguage(currentLanguage === 'es' ? 'en' : 'es');
     });
 }
 
@@ -74,31 +145,38 @@ const renderProjects = (projectList, container) => {
     projectList.forEach((project) => {
         const card = document.createElement('div');
         card.classList.add('card');
+        const projectTitle = currentLanguage === 'en' ? (project.titleEn || project.title) : project.title;
+        const projectDescription = currentLanguage === 'en'
+            ? (project.descriptionEn || project.description)
+            : project.description;
+        const labels = currentLanguage === 'en'
+            ? { zoom: 'Enlarge image', demo: 'Play demo', github: 'View on GitHub', website: 'Visit website', screenshot: 'project screenshot' }
+            : { zoom: 'Ampliar imagen', demo: 'Jugar demo', github: 'Ver en GitHub', website: 'Visitar sitio web', screenshot: 'captura del proyecto' };
 
         card.innerHTML = `
-          <button class="card__image-button" type="button" aria-label="Ampliar imagen de ${project.title}">
-            <img src="${project.image}" alt="${project.title} - captura del proyecto">
-            <span class="card__image-hint"><i class="bi bi-zoom-in" aria-hidden="true"></i> Ampliar imagen</span>
+          <button class="card__image-button" type="button" aria-label="${labels.zoom}: ${projectTitle}">
+            <img src="${project.image}" alt="${projectTitle} - ${labels.screenshot}">
+            <span class="card__image-hint"><i class="bi bi-zoom-in" aria-hidden="true"></i> ${labels.zoom}</span>
           </button>
           <div class="card-content">
             <div class="card-header">
-              <h4 class="card-title">${project.title}</h4>
+              <h4 class="card-title">${projectTitle}</h4>
               <div class="card-actions">
                 ${project.demo ? `
-                  <a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="github-button" title="Jugar demo" aria-label="Jugar demo de ${project.title}">
+                  <a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="github-button" title="${labels.demo}" aria-label="${labels.demo}: ${projectTitle}">
                     <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
                   </a>` : ''}
                 ${project.github ? `
-                  <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="Ver en GitHub">
+                  <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="github-button" title="${labels.github}" aria-label="${labels.github}: ${projectTitle}">
                     <i class="bi bi-github"></i>
                   </a>` : ''}
                 ${project.website ? `
-                  <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="github-button" title="Visitar sitio web" aria-label="Visitar sitio web de ${project.title}">
+                  <a href="${project.website}" target="_blank" rel="noopener noreferrer" class="github-button" title="${labels.website}" aria-label="${labels.website}: ${projectTitle}">
                     <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
                   </a>` : ''}
               </div>
             </div>
-            <p class="card-description">${project.description}</p>
+            <p class="card-description">${projectDescription}</p>
             <div class="card-tech">
               ${project.technologies.map(tech => `<span>${tech}</span>`).join('')}
             </div>
@@ -112,7 +190,7 @@ const renderProjects = (projectList, container) => {
             const image = imageButton.querySelector('img');
             imageViewerImage.src = image.src;
             imageViewerImage.alt = image.alt;
-            imageViewerTitle.textContent = project.title;
+            imageViewerTitle.textContent = projectTitle;
             imageViewer.showModal();
         });
 
@@ -122,26 +200,28 @@ const renderProjects = (projectList, container) => {
     sr.reveal(container.querySelectorAll('.card'), { interval: 200 });
 };
 
+const renderProjectCollections = () => {
+    if (!allProjects.length) return;
+    const containers = {
+        game: document.getElementById('gamesContainer'),
+        'web-app': document.getElementById('webAppContainer'),
+        erp: document.getElementById('erpContainer'),
+        website: document.getElementById('websiteContainer')
+    };
+
+    Object.entries(containers).forEach(([type, container]) => {
+        if (container) renderProjects(allProjects.filter(project => project.type === type), container);
+    });
+};
+
 fetch('./assets/data/data.json')
     .then(response => {
         if (!response.ok) throw new Error('Error al cargar el archivo JSON');
         return response.json();
     })
     .then(projects => {
-        const gameContainer = document.getElementById('gamesContainer');
-        const webAppContainer = document.getElementById('webAppContainer');
-        const erpContainer = document.getElementById('erpContainer');
-        const websiteContainer = document.getElementById('websiteContainer');
-
-        const gameProjects = projects.filter(p => p.type === 'game');
-        const webApps = projects.filter(p => p.type === 'web-app');
-        const erpApps = projects.filter(p => p.type === 'erp');
-        const websites = projects.filter(p => p.type === 'website');
-
-        if (gameContainer) renderProjects(gameProjects, gameContainer);
-        if (webAppContainer) renderProjects(webApps, webAppContainer);
-        if (erpContainer) renderProjects(erpApps, erpContainer);
-        if (websiteContainer) renderProjects(websites, websiteContainer);
+        allProjects = projects;
+        renderProjectCollections();
     })
     .catch(error => console.error('Hubo un problema al cargar los proyectos:', error));
 
@@ -159,9 +239,9 @@ if (contactForm) {
 
     const getError = (input) => {
         const value = input.value.trim();
-        if (!value) return 'Este campo es obligatorio.';
+        if (!value) return translations[currentLanguage]['contact-required'];
         if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-            return 'Ingresa un correo electrónico válido.';
+            return translations[currentLanguage]['email-invalid'];
         }
         return '';
     };
@@ -194,11 +274,24 @@ if (contactForm) {
 
         const [nameField, emailField, messageField] = fields;
         const recipient = 'mjuliantor@gmail.com';
-        const subject = 'Contacto desde portfolio';
-        const body = `Nombre: ${nameField.input.value.trim()}\nCorreo: ${emailField.input.value.trim()}\n\nMensaje:\n${messageField.input.value.trim()}`;
+        const copy = translations[currentLanguage];
+        const subject = copy['mail-subject'];
+        const body = `${copy['mail-name']}: ${nameField.input.value.trim()}\n${copy['mail-email']}: ${emailField.input.value.trim()}\n\n${copy['mail-message']}:\n${messageField.input.value.trim()}`;
         const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
         window.location.href = mailtoUrl;
-        status.textContent = 'Tu mensaje está listo. Confirma el envío desde tu aplicación de correo.';
+        status.textContent = copy['contact-status'];
     });
 }
+
+fetch('./assets/data/translations.json')
+    .then(response => {
+        if (!response.ok) throw new Error('Error al cargar el archivo de traducciones');
+        return response.json();
+    })
+    .then(dictionary => {
+        translations = dictionary;
+        if (languageToggle) languageToggle.disabled = false;
+        applyLanguage(currentLanguage);
+    })
+    .catch(error => console.error('Hubo un problema al cargar las traducciones:', error));

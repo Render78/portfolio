@@ -222,6 +222,33 @@ img {
   color: var(--second-color);
   font-size: 1.5rem;
   cursor: pointer;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.nav__language-toggle {
+  color: var(--second-color);
+  font: inherit;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  background: none;
+  border: 1px solid var(--first-color);
+  border-radius: 0.35rem;
+  padding: 0.25rem 0.55rem;
+  cursor: pointer;
+}
+
+.nav__language-toggle:hover,
+.nav__language-toggle:focus-visible {
+  color: #fff;
+  background-color: var(--first-color);
+}
+
+.nav__language-toggle:focus-visible,
+.nav__toggle:focus-visible {
+  outline: 2px solid var(--second-color);
+  outline-offset: 3px;
 }
 
 .active-link::after {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <title>Julián Torres - Portfolio</title>
+    <title>Portfolio de Julián Torres</title>
 </head>
 
 <body>
@@ -30,31 +30,36 @@
                 </ul>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
+            <button class="nav__language-toggle" id="language-toggle" type="button" aria-label="Cambiar idioma a inglés">
+                EN
+            </button>
+
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-label="Navegación"
+                data-key-aria-label="navigation" aria-expanded="false" aria-controls="nav-menu">
                 <i class='bi bi-list'></i>
-            </div>
+            </button>
         </nav>
     </header>
 
     <main class="l-main">
         <section class="home bd-grid" id="home">
             <div class="home__data">
-                <h1 class="home__title" data-key="home-title">Buenas!<br>Soy <span class="home__title-color">Julián
+                <h1 class="home__title" data-key="home-title" data-key-html="true">Buenas!<br>Soy <span class="home__title-color">Julián
                         Torres</span><br>
                     Full Stack Dev</h1>
 
                 <a href="https://rxresu.me/mjuliantor/fullstack-cv" target="_blank" class="button"
-                    data-key="contact">Ver Currículum Vitae (CV)</a>
+                        data-key="cv">Ver Currículum Vitae (CV)</a>
             </div>
 
             <div class="home__social">
-                <a href="https://github.com/Render78" target="_blank" class="home__social-icon"><i
+                <a href="https://github.com/Render78" target="_blank" class="home__social-icon" aria-label="GitHub"><i
                         class='bi bi-github'></i></a>
-                <a href="https://www.linkedin.com/in/mario-juli%C3%A1n-molina-torres-2a8bb7247/" target="_blank"
+                <a href="https://www.linkedin.com/in/mario-juli%C3%A1n-molina-torres-2a8bb7247/" target="_blank" aria-label="LinkedIn"
                     class="home__social-icon"><i class='bi bi-linkedin'></i></a>
-                <a href="mailto:mjuliantor@gmail.com" target="_blank" class="home__social-icon"><i
+                <a href="mailto:mjuliantor@gmail.com" target="_blank" class="home__social-icon" aria-label="Correo electrónico" data-key-aria-label="email-social"><i
                         class='bi bi-envelope'></i></a>
-                <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon"><i
+                <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon" aria-label="WhatsApp"><i
                         class='bi bi-whatsapp'></i></a>
             </div>
 
@@ -76,7 +81,7 @@
 
         <section class="experience section" id="about">
             <div class="experience__container bd-grid">
-                <p class="experience__intro">
+                <p class="experience__intro" data-key="experience-intro">
                     Full Stack Developer graduado en la Universidad Tecnológica Nacional - Facultad Regional Córdoba
                     enfocado en crear soluciones web escalables de punta a punta. Especializado en Java (Spring Boot),
                     Angular, React y stack MERN, trabajando bajo principios SOLID, Clean Architecture, SQL y Docker.
@@ -84,15 +89,15 @@
 
                 <div class="timeline-grid">
                     <section class="timeline-group" aria-labelledby="experience-title">
-                        <h2 class="timeline-group__title" id="experience-title">Experiencia profesional</h2>
-                        <ol class="timeline" aria-label="Experiencia profesional">
+                        <h2 class="timeline-group__title" id="experience-title" data-key="experience-title">Experiencia profesional</h2>
+                        <ol class="timeline" aria-label="Experiencia profesional" data-key-aria-label="experience-title">
                             <li class="timeline__item">
-                                <span class="timeline__date">10/2025 - ACTUALIDAD</span>
+                                <span class="timeline__date" data-key="experience-date">10/2025 - ACTUALIDAD</span>
                                 <article class="timeline__content">
-                                    <h3 class="timeline__title">UEPC - Unión de Educadores de la Provincia de Córdoba
+                                    <h3 class="timeline__title" data-key="experience-company">UEPC - Unión de Educadores de la Provincia de Córdoba
                                     </h3>
                                     <p class="timeline__place">Wordpress Web Developer</p>
-                                    <p>Desarrollo y mantenimiento web utilizando PHP y WordPress, integrando APIs,
+                                    <p data-key="experience-description">Desarrollo y mantenimiento web utilizando PHP y WordPress, integrando APIs,
                                         custom post types y optimizando consultas de
                                         bases de datos, rendimiento y maquetación frontend</p>
                                 </article>
@@ -101,15 +106,15 @@
                     </section>
 
                     <section class="timeline-group" aria-labelledby="education-title">
-                        <h2 class="timeline-group__title" id="education-title">Educación</h2>
-                        <ol class="timeline" aria-label="Educación">
+                        <h2 class="timeline-group__title" id="education-title" data-key="education-title">Educación</h2>
+                        <ol class="timeline" aria-label="Educación" data-key-aria-label="education-title">
                             <li class="timeline__item">
                                 <span class="timeline__date">12/2021 - 12/2025</span>
                                 <article class="timeline__content">
-                                    <h3 class="timeline__title">Tecnicatura Universitaria en Programación</h3>
-                                    <p class="timeline__place">Universidad Tecnológica Nacional - Facultad Regional
+                                    <h3 class="timeline__title" data-key="education-utn-title">Tecnicatura Universitaria en Programación</h3>
+                                    <p class="timeline__place" data-key="education-utn-place">Universidad Tecnológica Nacional - Facultad Regional
                                         Córdoba</p>
-                                    <p>Formación integral en ingeniería de software, Programación Orientada a Objetos
+                                    <p data-key="education-utn-description">Formación integral en ingeniería de software, Programación Orientada a Objetos
                                         (POO), modelado de bases de datos
                                         relacionales y desarrollo de aplicaciones backend robustas y escalables.</p>
                                 </article>
@@ -117,9 +122,9 @@
                             <li class="timeline__item">
                                 <span class="timeline__date">07/2023 - 09/2024</span>
                                 <article class="timeline__content">
-                                    <h3 class="timeline__title">Carrera de Desarrollo Full Stack</h3>
+                                    <h3 class="timeline__title" data-key="education-coder-title">Carrera de Desarrollo Full Stack</h3>
                                     <p class="timeline__place">CODERHOUSE</p>
-                                    <p>Formación integral en el stack MERN, con foco en diseño de APIs RESTful con
+                                    <p data-key="education-coder-description">Formación integral en el stack MERN, con foco en diseño de APIs RESTful con
                                         Node.js / Express, bases de datos NoSQL
                                         (MongoDB) e integración cliente-servidor con React.</p>
                                 </article>
@@ -181,7 +186,7 @@
 
                 </div>
                 <div>
-                    <img src="./assets/img/skills/frontend.png" alt="Frontend Skills" class="skills__img">
+                    <img src="./assets/img/skills/frontend.png" alt="Habilidades frontend" data-key-alt="alt-frontend" class="skills__img">
                 </div>
 
                 <div>
@@ -216,7 +221,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/img/skills/backend.png" alt="Backend Skills" class="skills__img">
+                    <img src="./assets/img/skills/backend.png" alt="Habilidades backend" data-key-alt="alt-backend" class="skills__img">
                 </div>
 
                 <div>
@@ -255,7 +260,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/img/skills/db.jpg" alt="Database Skills" class="skills__img">
+                    <img src="./assets/img/skills/db.jpg" alt="Habilidades en bases de datos" data-key-alt="alt-databases" class="skills__img">
                 </div>
 
                 <div>
@@ -309,7 +314,7 @@
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/img/skills/devops.jpg" alt="DevOps Skills" class="skills__img">
+                    <img src="./assets/img/skills/devops.jpg" alt="Habilidades de DevOps" data-key-alt="alt-devops" class="skills__img">
                 </div>
             </div>
         </section>
@@ -336,7 +341,7 @@
             </div>
 
             <div class="work-category">
-                <h3 class="work-category__title" data-key="work-subtitle-2">Sitios Web & Landing Pages Comerciales</h3>
+                <h3 class="work-category__title" data-key="work-subtitle-websites">Sitios Web & Landing Pages Comerciales</h3>
                 <p class="work-category__description" data-key="work-website">
                     Sitios web y landing pages modernas, desarrolladas con un enfoque en diseño responsive, velocidad de
                     carga y SEO técnico, optimizadas para ofrecer una experiencia fluida y convertir visitas en
@@ -363,18 +368,18 @@
             <div class="contact__container bd-grid">
                 <form action="" class="contact__form" id="contact-form" novalidate>
                     <div class="contact__field">
-                        <input type="text" id="name" name="name" placeholder="Nombre completo" class="contact__input"
-                            aria-label="Nombre" aria-describedby="name-error">
+                        <input type="text" id="name" name="name" placeholder="Nombre completo" data-key-placeholder="name-placeholder" class="contact__input"
+                            aria-label="Nombre" data-key-aria-label="name-label" aria-describedby="name-error">
                         <span class="contact__error" id="name-error" aria-live="polite"></span>
                     </div>
                     <div class="contact__field">
-                        <input type="email" id="email" name="email" placeholder="E-Mail" class="contact__input"
-                            aria-label="Correo electrónico" aria-describedby="email-error">
+                        <input type="email" id="email" name="email" placeholder="E-Mail" data-key-placeholder="email-placeholder" class="contact__input"
+                            aria-label="Correo electrónico" data-key-aria-label="email-label" aria-describedby="email-error">
                         <span class="contact__error" id="email-error" aria-live="polite"></span>
                     </div>
                     <div class="contact__field">
                         <textarea id="message" name="message" cols="0" rows="10" class="contact__input"
-                            placeholder="Mensaje" style="resize: none;" aria-label="Mensaje"
+                            placeholder="Mensaje" data-key-placeholder="message-placeholder" style="resize: none;" aria-label="Mensaje" data-key-aria-label="message-label"
                             aria-describedby="message-error"></textarea>
                         <span class="contact__error" id="message-error" aria-live="polite"></span>
                     </div>
@@ -388,20 +393,20 @@
     <footer class="footer">
         <p class="footer__title text-hover">Julián Torres</p>
         <div class="footer__social">
-            <a href="https://github.com/Render78" target="_blank" class="home__social-icon"><i
+            <a href="https://github.com/Render78" target="_blank" class="home__social-icon" aria-label="GitHub"><i
                     class='bi bi-github'></i></a>
             <a href="https://www.linkedin.com/in/mario-juli%C3%A1n-molina-torres-2a8bb7247/" target="_blank"
-                class="home__social-icon"><i class='bi bi-linkedin'></i></a>
-            <a href="mailto:mariojuliantor@hotmail.com" target="_blank" class="home__social-icon"><i
+                    class="home__social-icon" aria-label="LinkedIn"><i class='bi bi-linkedin'></i></a>
+            <a href="mailto:mariojuliantor@hotmail.com" target="_blank" class="home__social-icon" aria-label="Correo electrónico" data-key-aria-label="email-social"><i
                     class='bi bi-envelope'></i></a>
-            <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon"><i
+            <a href="https://wa.me/543512046426" target="_blank" class="home__social-icon" aria-label="WhatsApp"><i
                     class='bi bi-whatsapp'></i></a>
         </div>
-        <p class="footer__copy" data-key="footer">&#169; <span id="copyright-year"></span> Julián Torres. Todos los derechos reservados</p>
+        <p class="footer__copy">&#169; <span id="copyright-year"></span> Julián Torres. <span data-key="footer-rights">Todos los derechos reservados</span></p>
     </footer>
 
     <dialog class="image-viewer" id="image-viewer" aria-labelledby="image-viewer-title">
-        <button class="image-viewer__close" id="image-viewer-close" type="button" aria-label="Cerrar imagen">
+        <button class="image-viewer__close" id="image-viewer-close" type="button" aria-label="Cerrar imagen" data-key-aria-label="close-image">
             <i class="bi bi-x-lg" aria-hidden="true"></i>
         </button>
         <img class="image-viewer__image" id="image-viewer-image" src="" alt="">
