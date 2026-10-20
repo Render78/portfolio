@@ -127,7 +127,7 @@ const applyLanguage = (language) => {
         if (languageFlag) {
             languageFlag.src = language === 'es'
                 ? './assets/img/flags/us.svg'
-                : './assets/img/flags/ar.svg';
+                : './assets/img/flags/arg.svg';
         }
         if (languageName) languageName.textContent = language === 'es' ? 'English' : 'Español';
         languageToggle.setAttribute(
