@@ -61,7 +61,7 @@
     "skills": "Skills",
     "work": "Projects",
     "contact": "Contact",
-    "home-title": "Hello!<br>I am <span class=\"home__title-color\">Julián Torres</span><br>Full Stack Developer",
+    "home-title": "Hello!<br>I am <span class=\"home__title-color\">Julián Torres</span><br>Full Stack Dev",
     "cv": "View Resume",
     "experience-intro": "Full Stack Developer, graduate of the National Technological University - Córdoba Regional Faculty, focused on building end-to-end scalable web solutions. Specialized in Java (Spring Boot), Angular, React, and the MERN stack, applying SOLID principles, Clean Architecture, SQL, and Docker.",
     "experience-title": "Professional experience",
