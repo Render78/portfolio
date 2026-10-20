@@ -164,9 +164,8 @@
             "HTML",
             "CSS",
             "JavaScript",
-            "GSAP",
-            "Tailwind CSS",
-            "Font Awesome"
+            "Bootstrap 5",
+            "Bootstrap Icons"
         ],
         "website": "https://kevmarhotel.com.ar",
         "type": "website"
