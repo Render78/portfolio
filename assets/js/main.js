@@ -64,6 +64,8 @@ const imageViewerImage = document.getElementById('image-viewer-image');
 const imageViewerTitle = document.getElementById('image-viewer-title');
 const imageViewerClose = document.getElementById('image-viewer-close');
 const languageToggle = document.getElementById('language-toggle');
+const languageFlag = document.getElementById('language-flag');
+const languageName = document.getElementById('language-name');
 let currentLanguage = 'es';
 let allProjects = [];
 
@@ -122,7 +124,12 @@ const applyLanguage = (language) => {
     });
 
     if (languageToggle) {
-        languageToggle.textContent = language === 'es' ? 'EN' : 'ES';
+        if (languageFlag) {
+            languageFlag.src = language === 'es'
+                ? './assets/img/flags/us.svg'
+                : './assets/img/flags/ar.svg';
+        }
+        if (languageName) languageName.textContent = language === 'es' ? 'English' : 'Español';
         languageToggle.setAttribute(
             'aria-label',
             language === 'es' ? 'Cambiar idioma a inglés' : 'Switch language to Spanish'

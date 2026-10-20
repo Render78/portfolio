@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 20">
+  <rect width="38" height="20" fill="#fff"/>
+  <path fill="#b22234" d="M0 0h38v1.54H0zm0 3.08h38v1.54H0zm0 3.08h38V7.7H0zm0 3.08h38v1.54H0zm0 3.08h38v1.54H0zm0 3.08h38v1.54H0zm0 3.08h38V20H0z"/>
+  <path fill="#3c3b6e" d="M0 0h16v10.77H0z"/>
+  <g fill="#fff">
+    <circle cx="1.7" cy="1.05" r=".38"/><circle cx="4.4" cy="1.05" r=".38"/><circle cx="7.1" cy="1.05" r=".38"/><circle cx="9.8" cy="1.05" r=".38"/><circle cx="12.5" cy="1.05" r=".38"/><circle cx="15.2" cy="1.05" r=".38"/>
+    <circle cx="3.05" cy="2.25" r=".38"/><circle cx="5.75" cy="2.25" r=".38"/><circle cx="8.45" cy="2.25" r=".38"/><circle cx="11.15" cy="2.25" r=".38"/><circle cx="13.85" cy="2.25" r=".38"/>
+    <circle cx="1.7" cy="3.45" r=".38"/><circle cx="4.4" cy="3.45" r=".38"/><circle cx="7.1" cy="3.45" r=".38"/><circle cx="9.8" cy="3.45" r=".38"/><circle cx="12.5" cy="3.45" r=".38"/><circle cx="15.2" cy="3.45" r=".38"/>
+    <circle cx="3.05" cy="4.65" r=".38"/><circle cx="5.75" cy="4.65" r=".38"/><circle cx="8.45" cy="4.65" r=".38"/><circle cx="11.15" cy="4.65" r=".38"/><circle cx="13.85" cy="4.65" r=".38"/>
+    <circle cx="1.7" cy="5.85" r=".38"/><circle cx="4.4" cy="5.85" r=".38"/><circle cx="7.1" cy="5.85" r=".38"/><circle cx="9.8" cy="5.85" r=".38"/><circle cx="12.5" cy="5.85" r=".38"/><circle cx="15.2" cy="5.85" r=".38"/>
+    <circle cx="3.05" cy="7.05" r=".38"/><circle cx="5.75" cy="7.05" r=".38"/><circle cx="8.45" cy="7.05" r=".38"/><circle cx="11.15" cy="7.05" r=".38"/><circle cx="13.85" cy="7.05" r=".38"/>
+    <circle cx="1.7" cy="8.25" r=".38"/><circle cx="4.4" cy="8.25" r=".38"/><circle cx="7.1" cy="8.25" r=".38"/><circle cx="9.8" cy="8.25" r=".38"/><circle cx="12.5" cy="8.25" r=".38"/><circle cx="15.2" cy="8.25" r=".38"/>
+    <circle cx="3.05" cy="9.45" r=".38"/><circle cx="5.75" cy="9.45" r=".38"/><circle cx="8.45" cy="9.45" r=".38"/><circle cx="11.15" cy="9.45" r=".38"/><circle cx="13.85" cy="9.45" r=".38"/>
+  </g>
+</svg>
