@@ -154,5 +154,21 @@
         ],
         "website": "https://kickoff.com.ar",
         "type": "website"
+    },
+    {
+        "id": 12,
+        "image": "./assets/img/websites/hotelkevmar.png",
+        "title": "Hotel KEV**MAR",
+        "description": "Landing page desarrollada con SEO para promocionar habitaciones y servicios de un hotel en Villa Carlos Paz, Córdoba, Argentina.",
+        "technologies": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GSAP",
+            "Tailwind CSS",
+            "Font Awesome"
+        ],
+        "website": "https://kevmarhotel.com.ar",
+        "type": "website"
     }
 ]
