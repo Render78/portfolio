@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "./assets/img/games/tetris.png",
+        "image": "./assets/img/games/tetris.webp",
         "title": "Tetris",
         "description": "Versión web del clásico Tetris, con controles de teclado y lógica de colisión de piezas.",
         "descriptionEn": "A web version of the classic Tetris game, featuring keyboard controls and piece collision logic.",
@@ -16,7 +16,7 @@
     },
     {
         "id": 2,
-        "image": "./assets/img/games/pong.png",
+        "image": "./assets/img/games/pong.webp",
         "title": "Pong",
         "description": "Juego Pong local para dos jugadores o para jugar contra IA, cada uno con sus propias teclas de control.",
         "descriptionEn": "A local two-player Pong game, also playable against AI, with dedicated controls for each player.",
@@ -31,7 +31,7 @@
     },
     {
         "id": 3,
-        "image": "./assets/img/games/snake-game.png",
+        "image": "./assets/img/games/snake-game.webp",
         "title": "Snake Game",
         "description": "Juego de la serpiente donde el jugador debe recolectar comida sin chocar consigo mismo.",
         "descriptionEn": "A snake game where the player collects food without running into itself.",
@@ -46,7 +46,7 @@
     },
     {
         "id": 4,
-        "image": "./assets/img/games/memo-test.png",
+        "image": "./assets/img/games/memo-test.webp",
         "title": "Memo Test",
         "description": "Juego de memoria con cartas que se voltean y se deben emparejar en el menor tiempo posible.",
         "descriptionEn": "A memory game where players flip cards and match pairs in the shortest time possible.",
@@ -61,7 +61,7 @@
     },
     {
         "id": 5,
-        "image": "./assets/img/games/tateti.png",
+        "image": "./assets/img/games/tateti.webp",
         "title": "Tateti / Tres en línea",
         "titleEn": "Tic-Tac-Toe",
         "description": "Juego clásico de tres en línea para dos jugadores, con sistema de puntuación.",
@@ -77,7 +77,7 @@
     },
     {
         "id": 6,
-        "image": "./assets/img/games/ahorcado.png",
+        "image": "./assets/img/games/ahorcado.webp",
         "title": "Ahorcado",
         "titleEn": "Hangman",
         "description": "Versión web del juego del ahorcado, donde se debe adivinar la palabra antes de que se complete el dibujo.",
@@ -93,7 +93,7 @@
     },
     {
         "id": 7,
-        "image": "./assets/img/web-apps/retrowear.png",
+        "image": "./assets/img/web-apps/retrowear.webp",
         "title": "Geek Haven",
         "description": "E-Commerce realizado para el curso de React de CODERHOUSE.",
         "descriptionEn": "An e-commerce website built for CODERHOUSE's React course.",
@@ -108,7 +108,7 @@
     },
     {
         "id": 8,
-        "image": "./assets/img/web-apps/calculadora.png",
+        "image": "./assets/img/web-apps/calculadora.webp",
         "title": "Calculadora",
         "titleEn": "Calculator",
         "description": "Calculadora que permite realizar las cuatro operaciones matemáticas básicas.",
@@ -123,7 +123,7 @@
     },
     {
         "id": 9,
-        "image": "./assets/img/erp/staybooker.png",
+        "image": "./assets/img/erp/staybooker.webp",
         "title": "StayBooker",
         "description": "Plataforma de reservas de alojamientos con gestión de usuarios, reservas y pagos orientada a hoteles.",
         "descriptionEn": "A hotel-focused accommodation booking platform with user, reservation, and payment management.",
@@ -138,7 +138,7 @@
     },
     {
         "id": 10,
-        "image": "./assets/img/websites/rendered.png",
+        "image": "./assets/img/websites/rendered.webp",
         "title": "RENDERED",
         "description": "Sitio web comercial para servicios de desarrollo web, software a medida y soporte técnico con diseño responsive, SEO y optimización de conversión.",
         "descriptionEn": "A business website for web development, custom software, and technical support services, featuring responsive design, SEO, and conversion optimization.",
@@ -154,7 +154,7 @@
     },
     {
         "id": 11,
-        "image": "./assets/img/websites/kickoff.png",
+        "image": "./assets/img/websites/kickoff.webp",
         "title": "KICKOFF",
         "description": "Sitio web promocional para la difusión de eventos, talleres de cosplay. Optimizada para dispositivos móviles.",
         "descriptionEn": "A promotional website for events and cosplay workshops, optimized for mobile devices.",
@@ -171,7 +171,7 @@
     },
     {
         "id": 12,
-        "image": "./assets/img/websites/hotelkevmar.png",
+        "image": "./assets/img/websites/hotelkevmar.webp",
         "title": "Hotel KEV**MAR",
         "description": "Landing page desarrollada con SEO para promocionar habitaciones y servicios de un hotel en Villa Carlos Paz, Córdoba, Argentina.",
         "descriptionEn": "An SEO-optimized landing page promoting the rooms and services of a hotel in Villa Carlos Paz, Córdoba, Argentina.",
